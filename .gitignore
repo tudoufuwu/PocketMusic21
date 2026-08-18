@@ -1,0 +1,11 @@
+.gradle/
+.idea/
+.android-sdk/
+.tools/
+.openclaw-state/
+local.properties
+**/build/
+*.iml
+sdk-licenses.log
+logs/*.log
+artifacts/*.apk
