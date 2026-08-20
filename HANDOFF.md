@@ -1,5 +1,47 @@
 ﻿# Android手机播放器接手说明
 
+## 2026-08-20 v0.2.0 有声独立制谱器
+
+- 独立应用 `com.shadowtrace.scoremaker21` 已完成 v0.2.0 有声制谱：横屏 21 键每次点击都会立即播放本地游戏采样，无论当前是否录制；播放器生命周期结束时安全释放音频资源。
+- 录制支持按点击时间保留音符间隔、90ms 窗口内合并和弦、0.125 拍量化与 `p` 休止；长休止会拆分为播放器可接受的块。完整工作流为开始、暂停、继续、停止、撤销、选中删除、确认清空、TXT 导入和 TXT 保存。
+- 保存仅在停止且存在事件时启用，导入仅允许停止状态；界面持续显示事件数和最近按键。TXT 推荐节拍兼容半角/全角冒号。
+- 最终门禁：13 项测试、Lint、assembleDebug 全部成功。TXT 导入接受播放器协议的任意 `0 < 拍数 ≤ 64`，并识别推荐节拍/录制基准的半角与全角冒号。最新版 `artifacts/PocketMusic21-ScoreMaker-v0.2.0-sound-debug.apk`，11,875,218 bytes，SHA-256 `081883CFC01AC80F73A04FFC3393CFF60CA37C177467669D993A66BF82F5C4BB`；桌面同名副本一致。
+- 旧制谱器 APK 已移动至 `C:\Users\rmb\Desktop\旧版APK归档`，可恢复。`发布全部GitHub.ps1 -DryRun` 已成功：Windows 26 项测试、Android/Windows 240/240 跨端检查均通过；GitHub **未上传**，未创建 Release。
+
+## 2026-08-19 最新接手点（主播放器无录制 + 独立制谱器）
+
+- 当前交付不是“播放器内录制”：主播放器 `com.shadowtrace.pocketmusic21` 已删除游戏内录制入口、透明触摸捕获层和全部 `Recording*` 生产类；保留 240 首曲库、选曲/搜索/自动播放。
+- 收缩悬浮窗现在固定显示音乐球、状态/当前选曲、`▶ 播放`、`■ 停止`。播放只针对当前选曲且同曲播放中不重复启动；停止不清除选曲；无活动播放时停止禁用。
+- `MusicAccessibilityService.onInterrupt()` 不再把瞬时系统界面当成停止条件；主界面旋转重建也不再主动停止播放。锁屏、无障碍服务真正销毁和用户主动停止仍是停止条件。
+- 独立制谱器 `com.shadowtrace.scoremaker21` 位于 `scoreMaker/`，无无障碍权限/悬浮窗权限。自有横屏 21 键支持开始、暂停/继续、停止、撤销、删除、清空、和弦合并、0.5 拍量化、`p` 休止、TXT 导入/保存；可生成播放器通用 TXT。
+- 主播放器 APK：`artifacts/PocketMusic21-v0.1.0-240songs-no-recording-debug.apk`（10,165,073 bytes，`1D7CCBFF7ED8FC7F428B31D5FE69845DC68443CB4BA57C5234C9510F6FF8937C`）。
+- Windows EXE：`JianpuPlayerNext-v1.0.0-beta.41.exe`（14,850,457 bytes，`D15F10A339D60BAA98804912E4A8594BE3DA6814D90264DB5C127E3EC3A54C13`）。
+- 制谱器 APK：`artifacts/PocketMusic21-ScoreMaker-v0.1.0-240songs-debug.apk`（9,484,970 bytes，`26C72A3BC1F734E0F0BB297067C698E874049BA6A68A3284FB81699669BEF0FD`）。
+- 构建门禁已通过；下一步只做真机验收及明日音源到手后的识别/精修。GitHub 暂不上传。
+- 本轮新增 `song_226`–`song_239` 十四首经典候选，均为完整公开音频自动转谱候选、状态 `requires_in_game_audition`，不能标记 final。
+- 《须弥》确认为网易《一梦江湖》（原《楚留香》手游）少林门派曲，已作为 `song_157` 保留在双端正式曲库，推荐节拍 511 ms/拍；不得再次误删。
+- Android/Windows 曲库已同步为 240 首；`song_240` 为《尘外客》中文候选；跨端检查 240/240，缺失、独有、哈希/资源错误均为 0。GitHub 暂未上传。
+- 第一批七首已完成并发来源筛查但全部暂时 `blocked`，证据在 `source_scores/batch_20260819_first_piano_*`；不要把批次目录中的动机/简化 lead TXT 直接导入正式曲库。取得完整音源后从这些目录续跑即可。
+
+## 2026-08-19 最新接手点（录制输入层交接修复）
+
+- 当前最终方案：快速点击 FIFO；捕获层临时摘除后注入游戏、24ms 复用恢复；捕获范围缩为21键区域；暂停/保存/展开/旋转/销毁均有代次与 handoff token 保护。
+- 最新 APK：`artifacts/PocketMusic21-v0.1.0-mvp-213songs-recording-handoff-fix-debug.apk`，SHA-256 `E586EBBEE8547FF515A49F87EEC0A897DF0CD862B30485E0BFABD6F3597C473A`，9,806,370 bytes。
+- Android 单测/Lint/assembleDebug 及最终只读并发审查通过；没有静态阻断项。下一门禁是真机同键20次、5/10 CPS、交替键和双指和弦。未上传 GitHub。
+
+## 2026-08-19 最新接手点（录制排队修复）
+
+- 已修复真机“录制计数但游戏少发声”：快速点击 FIFO 排队、窗口输入切换等待两个动画帧、缺键失败必回调、真实音符数与休止事件分开显示。
+- 最新 APK：`artifacts/PocketMusic21-v0.1.0-mvp-213songs-recording-queue-fix-debug.apk`，SHA-256 `88DDD64DF0947992D1094684128D44F04B1FC928504B54B4A9C3E06EF5054613`，9,804,209 bytes。
+- Android 单测/Lint/assembleDebug 已通过；下一步只做真机同键慢点、5/10 CPS、交替键、双指和弦验收。未上传 GitHub。
+
+## 2026-08-19 最新接手点（213 首）
+
+- Android/Windows 曲库已同步为 213 首；第 213 首为《記憶（缘之空）》、627 ms/拍，自动转写候选，需游戏内试听。
+- 最新 APK：`artifacts/PocketMusic21-v0.1.0-mvp-213songs-kioku-debug.apk`，SHA-256 `520FAA898E507A76180246CE6FA1E80CF4A4D65D491C2E1CC264AD5B52EE5066`，9,801,275 bytes。
+- 跨端 213/213、Android 单测/Lint/assembleDebug、Windows 26 项测试和 EXE 构建通过；GitHub 未上传。
+- 录制低延迟与《肘我》标题修复仍包含在本构建中；真机验收缺口仍是游戏内录制手感和《記憶》听感。
+
 ## 2026-08-10 最新接手点
 
 ## 2026-08-18 更新接手点
@@ -52,7 +94,7 @@
 - 最新 APK：`F:\\codexai\\01\\mobile_player_android\\artifacts\\PocketMusic21-v0.1.0-mvp-debug.apk`。
 - APK SHA256：`655753781AA1118FC7F509BDF993B0FE862A27D6A0A78023B727645140902D5D`。
 - 与 Windows `music_player_next/builtin_songs` 的跨平台检查通过：0 missing、0 desktop-only、0 hash mismatch、0 manifest/asset error。
-- `肘我（江湖梦二创）` 独立于 `恕我`；三首都还是候选曲，等待游戏内试听定稿。
+- `肘我（江湖梦二创）` 独立于 `恕我`；三首都还是候选曲，等待游戏内试听定稿。当前运行时展示名称简化为 `肘我`，括号后缀只保留在来源留痕中。
 
 ## 2026-08-18 新增《念张师DJ版》
 

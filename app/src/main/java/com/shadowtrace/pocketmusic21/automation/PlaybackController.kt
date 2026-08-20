@@ -2,6 +2,7 @@ package com.shadowtrace.pocketmusic21.automation
 
 import com.shadowtrace.pocketmusic21.model.ParsedSong
 import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -17,7 +18,6 @@ object PlaybackController {
     private var prepared: ParsedSong? = null
     private var beatMs: Int = 700
     private var job: Job? = null
-    private var targetPackage: String? = null
 
     @Volatile var state: State = State.EMPTY
         private set
@@ -63,7 +63,6 @@ object PlaybackController {
             message = "请切回游戏后再播放"
             return false
         }
-        targetPackage = activePackage
         val timeline = PlaybackTimeline.build(song.events, beatMs)
         state = State.PLAYING
         message = "正在播放：${song.entry.title}"
@@ -72,16 +71,30 @@ object PlaybackController {
                 for (index in eventIndex until timeline.size) {
                     while (state == State.PAUSED && isActive) delay(50)
                     if (state != State.PLAYING || !isActive) break
-                    if (service.activePackageName() != targetPackage || service.isDeviceLocked()) {
-                        stop("游戏失焦或锁屏，已安全停止")
+                    if (service.isDeviceLocked()) {
+                        stop("锁屏，已安全停止")
                         break
                     }
                     val step = timeline[index]
-                    if (!step.isRest && !service.dispatchKeys(step.keys, step.holdMs)) {
-                        stop("手势派发失败，已停止")
-                        break
+                    if (!step.isRest) {
+                        while (state == State.PLAYING && isActive &&
+                            !dispatchAndAwait(service, step.keys, step.holdMs)
+                        ) {
+                            // Volume/charging/notification/rotation windows can temporarily make
+                            // Android reject gesture injection. Wait and retry this note instead of
+                            // turning a transient system event into a stopped song.
+                            message = "系统界面暂时占用，等待继续：${song.entry.title}"
+                            delay(GESTURE_RETRY_MS)
+                            if (service.isDeviceLocked()) {
+                                stop("锁屏，已安全停止")
+                                break
+                            }
+                        }
+                        while (state == State.PAUSED && isActive) delay(GESTURE_RETRY_MS)
+                        if (state != State.PLAYING || !isActive) break
+                        message = "正在播放：${song.entry.title}"
                     }
-                    delay(step.totalMs)
+                    delay(if (step.isRest) step.totalMs else (step.totalMs - step.holdMs).coerceAtLeast(0L))
                     eventIndex = index + 1
                 }
                 if (eventIndex >= timeline.size && state == State.PLAYING) {
@@ -105,12 +118,23 @@ object PlaybackController {
         }
     }
 
+    private suspend fun dispatchAndAwait(
+        service: MusicAccessibilityService,
+        keys: String,
+        holdMs: Long,
+    ): Boolean {
+        val result = CompletableDeferred<Boolean>()
+        service.dispatchKeys(keys, holdMs) { completed -> result.complete(completed) }
+        return result.await()
+    }
+
     fun stop(reason: String = "已停止") {
         job?.cancel()
         job = null
         eventIndex = 0
-        targetPackage = null
         if (prepared == null) state = State.EMPTY else state = State.STOPPED
         message = reason
     }
+
+    private const val GESTURE_RETRY_MS = 50L
 }

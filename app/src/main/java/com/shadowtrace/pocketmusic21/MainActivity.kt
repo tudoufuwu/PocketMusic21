@@ -43,7 +43,6 @@ import com.shadowtrace.pocketmusic21.data.SongRepository
 import com.shadowtrace.pocketmusic21.calibration.CalibrationScreen
 import com.shadowtrace.pocketmusic21.automation.MusicAccessibilityService
 import com.shadowtrace.pocketmusic21.automation.PlaybackController
-import com.shadowtrace.pocketmusic21.automation.RecordingSession
 import com.shadowtrace.pocketmusic21.automation.AppVisibility
 import com.shadowtrace.pocketmusic21.model.SongEntry
 import java.util.UUID
@@ -61,9 +60,6 @@ class MainActivity : ComponentActivity() {
 
     override fun onResume() {
         super.onResume()
-        if (PlaybackController.state == PlaybackController.State.PLAYING ||
-            PlaybackController.state == PlaybackController.State.PAUSED
-        ) PlaybackController.stop("已返回播放器，播放停止")
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -149,14 +145,6 @@ fun PocketMusicApp() {
                             pendingExport = parsed.events.joinToString("\n") { "${it.keys} ${it.beats}" } + "\n"
                             exporter.launch("${song.title}.txt")
                         }) { Text("导出当前 TXT") }
-                        Button(onClick = {
-                            val events = RecordingSession.snapshot()
-                            if (events.isEmpty()) status = "暂无录制内容，请在悬浮窗开始录制"
-                            else {
-                                pendingExport = events.joinToString("\n") { "${it.keys} ${it.beats}" } + "\n"
-                                exporter.launch("录制曲谱.txt")
-                            }
-                        }) { Text("导出录制") }
                     }
                     LazyColumn(modifier = Modifier.fillMaxSize()) {
                         items(visibleSongs, key = { it.id }) { song ->

@@ -17,3 +17,4 @@ dependencyResolutionManagement {
 rootProject.name = "PocketMusic21"
 include(":app")
 include(":mumuTapFixture")
+include(":scoreMaker")

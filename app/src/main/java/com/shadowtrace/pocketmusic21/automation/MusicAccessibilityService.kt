@@ -14,6 +14,7 @@ import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import android.text.Editable
+import android.text.TextUtils
 import android.text.TextWatcher
 import android.view.Gravity
 import android.view.MotionEvent
@@ -49,10 +50,14 @@ class MusicAccessibilityService : AccessibilityService() {
 
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {
         val newPackage = event?.packageName?.toString() ?: return
-        if (newPackage != packageName) foregroundPackage = newPackage
+        if (newPackage != packageName && !isTransientSystemUi(newPackage)) foregroundPackage = newPackage
     }
 
-    override fun onInterrupt() = PlaybackController.stop("无障碍服务被中断")
+    override fun onInterrupt() {
+        // Android may interrupt accessibility feedback for transient system UI (volume,
+        // charging, rotation). A failed gesture or service destruction remains responsible
+        // for stopping playback; do not turn a transient callback into a hard stop.
+    }
 
     override fun onDestroy() {
         hideOverlay()
@@ -62,6 +67,22 @@ class MusicAccessibilityService : AccessibilityService() {
     }
 
     fun activePackageName(): String? = foregroundPackage
+
+    fun isTargetWindowActive(targetPackage: String): Boolean {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            val focusedPackage = runCatching {
+                windows.firstOrNull { it.isFocused }?.root?.packageName?.toString()
+            }.getOrNull()
+            when {
+                focusedPackage == targetPackage -> return true
+                focusedPackage == null || isTransientSystemUi(focusedPackage) -> return true
+                else -> return false
+            }
+        }
+        return activePackageName() == targetPackage
+    }
+
+    private fun isTransientSystemUi(packageName: String) = packageName == "com.android.systemui"
 
     fun isLandscapeAndUnlocked(): Boolean {
         val keyguard = getSystemService(KEYGUARD_SERVICE) as KeyguardManager
@@ -73,13 +94,16 @@ class MusicAccessibilityService : AccessibilityService() {
         return keyguard.isKeyguardLocked
     }
 
-    fun dispatchKeys(keys: String, holdMs: Long): Boolean {
-        RecordingSession.append(keys, PlaybackController.currentBeatMs, holdMs)
+    fun dispatchKeys(keys: String, holdMs: Long, onFinished: ((Boolean) -> Unit)? = null): Boolean {
         val profile = CalibrationStore(applicationContext).load()
         val bounds = usableBounds()
         val builder = GestureDescription.Builder()
-        keys.forEach { key ->
-            val point = profile.points.firstOrNull { it.key == key } ?: return false
+        val points = keys.map { key -> profile.points.firstOrNull { it.key == key } }
+        if (points.any { it == null }) {
+            onFinished?.invoke(false)
+            return false
+        }
+        points.filterNotNull().forEach { point ->
             val x = bounds.left + point.x * bounds.width()
             val y = bounds.top + point.y * bounds.height()
             builder.addStroke(
@@ -90,7 +114,20 @@ class MusicAccessibilityService : AccessibilityService() {
                 ),
             )
         }
-        return dispatchGesture(builder.build(), null, null)
+        val callback = if (onFinished != null) {
+            object : GestureResultCallback() {
+                override fun onCompleted(gestureDescription: GestureDescription?) {
+                    onFinished?.invoke(true)
+                }
+
+                override fun onCancelled(gestureDescription: GestureDescription?) {
+                    onFinished?.invoke(false)
+                }
+            }
+        } else null
+        val accepted = dispatchGesture(builder.build(), callback, null)
+        if (!accepted) onFinished?.invoke(false)
+        return accepted
     }
 
     fun usableBounds(): Rect {
@@ -144,6 +181,9 @@ private class MusicOverlayPanel(
     private var expanded = false
     private var statusView: TextView? = null
     private var bubbleView: TextView? = null
+    private var bubbleStatusView: TextView? = null
+    private var bubblePlayButton: TextView? = null
+    private var bubbleStopButton: TextView? = null
     private var searchView: EditText? = null
     private var listView: ListView? = null
     private var listAdapter: SongListAdapter? = null
@@ -151,7 +191,6 @@ private class MusicOverlayPanel(
     private var modeButton: Button? = null
     private var autoButton: Button? = null
     private var favoriteButton: Button? = null
-    private var recordButton: Button? = null
     private var selected: SongEntry = initialSong()
     private var beatMs: Int = storedBeat(selected)
     private var playMode = runCatching {
@@ -185,11 +224,12 @@ private class MusicOverlayPanel(
         hideKeyboard()
         removeCurrent()
         val view = if (isExpanded) createExpandedView() else createBubbleView()
+        val width = if (isExpanded) expandedWidth() else collapsedWidth()
         val flags = WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN or
             if (isExpanded) WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
             else WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
         val layout = WindowManager.LayoutParams(
-            if (isExpanded) expandedWidth() else dp(52),
+            width,
             WindowManager.LayoutParams.WRAP_CONTENT,
             WindowManager.LayoutParams.TYPE_ACCESSIBILITY_OVERLAY,
             flags,
@@ -201,22 +241,51 @@ private class MusicOverlayPanel(
         }
         root = view
         params = layout
-        clampPosition(layout, if (isExpanded) expandedWidth() else dp(52), if (isExpanded) dp(360) else dp(52))
+        clampPosition(layout, width, dp(52))
         windowManager.addView(view, layout)
+        view.post {
+            if (root === view && params === layout) {
+                clampPosition(layout, width, view.height.coerceAtLeast(dp(52)))
+                runCatching { windowManager.updateViewLayout(view, layout) }
+            }
+        }
         refreshStatus()
     }
 
     private fun createBubbleView(): View {
-        return TextView(service).apply {
+        val controls = LinearLayout(service).apply {
+            orientation = LinearLayout.HORIZONTAL
+            gravity = Gravity.CENTER_VERTICAL
+        }
+        val bubble = TextView(service).apply {
             text = bubbleText()
             textSize = 24f
             gravity = Gravity.CENTER
             setTextColor(Color.WHITE)
             background = rounded(0xE66750A4.toInt(), dp(26).toFloat())
             elevation = dp(8).toFloat()
+            layoutParams = LinearLayout.LayoutParams(dp(52), dp(52))
             bubbleView = this
             installDrag(this, click = { render(true) })
         }
+        controls.addView(bubble)
+        bubbleStatusView = text("", 11f).apply {
+            gravity = Gravity.CENTER_VERTICAL
+            maxLines = 2
+            ellipsize = TextUtils.TruncateAt.END
+            setPadding(dp(6), 0, dp(4), 0)
+            background = rounded(0xE6222A34.toInt(), dp(8).toFloat())
+            layoutParams = LinearLayout.LayoutParams(dp(120), dp(48)).apply {
+                setMargins(dp(2), dp(2), 0, dp(2))
+            }
+        }.also(controls::addView)
+        bubblePlayButton = bubbleControl("▶ 播放", 0xE61E8E5A.toInt()) {
+            startAndCollapse()
+        }.also(controls::addView)
+        bubbleStopButton = bubbleControl("■ 停止", 0xE6B3261E.toInt()) {
+            stopCurrentPlayback()
+        }.also(controls::addView)
+        return controls
     }
 
     private fun createExpandedView(): View {
@@ -244,7 +313,7 @@ private class MusicOverlayPanel(
         statusView = status
 
         val search = EditText(service).apply {
-            hint = "搜索195首歌曲"
+            hint = "搜索${songs.size}首歌曲"
             setHintTextColor(0xFFB7BDC7.toInt())
             setTextColor(Color.WHITE)
             setSingleLine(true)
@@ -263,7 +332,7 @@ private class MusicOverlayPanel(
             dividerHeight = 1
             setBackgroundColor(0xFF222A34.toInt())
             this.adapter = adapter
-            layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, dp(240))
+            layoutParams = LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, songListHeight())
             setOnItemClickListener { _, _, position, _ ->
                 adapter.items.getOrNull(position)?.let(::selectSong)
             }
@@ -313,17 +382,6 @@ private class MusicOverlayPanel(
             } else PlaybackController.pause()
         })
         transport.addView(compactButton("■ 停止") { PlaybackController.stop() })
-        recordButton = compactButton("● 录制") {
-            if (RecordingSession.active) {
-                val count = RecordingSession.stop().size
-                refreshButtons()
-                statusView?.text = "☰ 拖动 · 已停止录制（$count 个音符）"
-            } else {
-                RecordingSession.start()
-                statusView?.text = "☰ 拖动 · 正在录制播放事件"
-            }
-            refreshButtons()
-        }.also(transport::addView)
         panel.addView(transport)
 
         refreshList("")
@@ -398,6 +456,12 @@ private class MusicOverlayPanel(
     }
 
     private fun startAndCollapse() {
+        if (PlaybackController.state == PlaybackController.State.PLAYING &&
+            PlaybackController.preparedTitle == selected.title
+        ) {
+            render(false)
+            return
+        }
         if (!PlaybackController.hasPreparedSong || PlaybackController.preparedTitle != selected.title) {
             if (!prepareSelected()) return
         }
@@ -405,6 +469,14 @@ private class MusicOverlayPanel(
         // The expanded accessibility overlay necessarily consumes touches inside its bounds.
         // Always shrink after Play, including on an error; the bubble color preserves status.
         render(false)
+    }
+
+    private fun stopCurrentPlayback() {
+        if (PlaybackController.state != PlaybackController.State.PLAYING &&
+            PlaybackController.state != PlaybackController.State.PAUSED
+        ) return
+        PlaybackController.stop("已停止：${PlaybackController.preparedTitle.orEmpty()}")
+        refreshStatus()
     }
 
     private fun changeSpeed(delta: Int) = setSpeed((beatMs + delta).coerceIn(200, 1800))
@@ -425,6 +497,15 @@ private class MusicOverlayPanel(
         } else ""
         statusView?.text = "☰ 拖动 · ${PlaybackController.message}$progress"
         bubbleView?.text = bubbleText()
+        bubbleStatusView?.text = collapsedStatusText()
+        val isPlayingSelected = PlaybackController.state == PlaybackController.State.PLAYING &&
+            PlaybackController.preparedTitle == selected.title
+        bubblePlayButton?.isEnabled = !isPlayingSelected
+        bubblePlayButton?.alpha = if (isPlayingSelected) 0.55f else 1f
+        val canStop = PlaybackController.state == PlaybackController.State.PLAYING ||
+            PlaybackController.state == PlaybackController.State.PAUSED
+        bubbleStopButton?.isEnabled = canStop
+        bubbleStopButton?.alpha = if (canStop) 1f else 0.55f
         bubbleView?.background = rounded(
             when (PlaybackController.state) {
                 PlaybackController.State.PLAYING -> 0xE61E8E5A.toInt()
@@ -441,6 +522,25 @@ private class MusicOverlayPanel(
         PlaybackController.State.PAUSED -> "Ⅱ"
         PlaybackController.State.ERROR -> "!"
         else -> "♫"
+    }
+
+    private fun collapsedStatusText(): String {
+        val playbackTitle = PlaybackController.preparedTitle
+        val stateLabel = when (PlaybackController.state) {
+            PlaybackController.State.PLAYING -> "播放中"
+            PlaybackController.State.PAUSED -> "已暂停"
+            PlaybackController.State.COMPLETED -> "已播完"
+            PlaybackController.State.ERROR -> "播放错误"
+            else -> "已选"
+        }
+        return if ((PlaybackController.state == PlaybackController.State.PLAYING ||
+                PlaybackController.state == PlaybackController.State.PAUSED) &&
+            playbackTitle != null && playbackTitle != selected.title
+        ) {
+            "$stateLabel：$playbackTitle\n已选：${selected.title}"
+        } else {
+            "$stateLabel：\n${selected.title}"
+        }
     }
 
     private fun handleCompletion() {
@@ -484,7 +584,6 @@ private class MusicOverlayPanel(
         autoButton?.text = if (autoPlay) "点歌即播✓" else "点歌即播×"
         modeButton?.text = playMode.label
         favoriteButton?.text = if (selected.id in favoriteIds()) "★ 收藏" else "☆ 收藏"
-        recordButton?.text = if (RecordingSession.active) "■ 结束录制" else "● 录制"
     }
 
     private fun toggleFavorite() {
@@ -518,6 +617,19 @@ private class MusicOverlayPanel(
         minimumWidth = 0
         setPadding(dp(7), 0, dp(7), 0)
         layoutParams = LinearLayout.LayoutParams(0, dp(42), 1f).apply { setMargins(dp(2), dp(2), dp(2), dp(2)) }
+        setOnClickListener { action() }
+    }
+
+    private fun bubbleControl(label: String, color: Int, action: () -> Unit) = TextView(service).apply {
+        text = label
+        textSize = 12f
+        gravity = Gravity.CENTER
+        setTextColor(Color.WHITE)
+        background = rounded(color, dp(10).toFloat())
+        elevation = dp(8).toFloat()
+        layoutParams = LinearLayout.LayoutParams(dp(58), dp(48)).apply {
+            setMargins(dp(2), dp(2), 0, dp(2))
+        }
         setOnClickListener { action() }
     }
 
@@ -555,7 +667,11 @@ private class MusicOverlayPanel(
                     x += (event.rawX - lastX).toInt()
                     y += (event.rawY - lastY).toInt()
                     lastX = event.rawX; lastY = event.rawY
-                    clampPosition(layout, if (expanded) expandedWidth() else dp(52), if (expanded) dp(360) else dp(52))
+                    clampPosition(
+                        layout,
+                        root?.width?.takeIf { it > 0 } ?: if (expanded) expandedWidth() else collapsedWidth(),
+                        root?.height?.takeIf { it > 0 } ?: dp(52),
+                    )
                     root?.let { windowManager.updateViewLayout(it, layout) }
                     true
                 }
@@ -595,6 +711,9 @@ private class MusicOverlayPanel(
         params = null
         statusView = null
         bubbleView = null
+        bubbleStatusView = null
+        bubblePlayButton = null
+        bubbleStopButton = null
         searchView = null
         listView = null
         listAdapter = null
@@ -603,6 +722,11 @@ private class MusicOverlayPanel(
     private fun dp(value: Int) = (value * service.resources.displayMetrics.density + 0.5f).toInt()
 
     private fun expandedWidth(): Int = minOf(dp(300), (service.usableBounds().width() * 0.38f).toInt())
+
+    private fun collapsedWidth(): Int = dp(52 + 122 + 2 * 60)
+
+    private fun songListHeight(): Int =
+        (service.usableBounds().height() - dp(260)).coerceIn(dp(64), dp(180))
 
     private class SongListAdapter(private val context: Context) : BaseAdapter() {
         var items: List<SongEntry> = emptyList()
