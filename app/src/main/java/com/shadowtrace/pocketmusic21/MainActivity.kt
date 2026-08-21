@@ -73,12 +73,12 @@ fun PocketMusicApp() {
     val context = LocalContext.current
     val repository = remember { SongRepository(context.applicationContext) }
     val bundled = remember { repository.bundledSongs() }
-    val imported = remember { mutableStateListOf<SongEntry>() }
+    val imported = remember { mutableStateListOf<SongEntry>().apply { addAll(repository.importedSongs()) } }
     val queue = remember { mutableStateListOf<SongEntry>() }
     var query by remember { mutableStateOf("") }
     var selected by remember { mutableStateOf<SongEntry?>(bundled.firstOrNull()) }
     var beatMs by remember { mutableFloatStateOf((selected?.beatMs ?: 700).toFloat()) }
-    var status by remember { mutableStateOf("内置曲库 ${bundled.size} 首") }
+    var status by remember { mutableStateOf("曲库 ${bundled.size + imported.size} 首") }
     var showCalibration by remember { mutableStateOf(false) }
 
     fun readImported(uri: Uri) {
@@ -90,6 +90,7 @@ fun PocketMusicApp() {
             SongEntry(UUID.randomUUID().toString(), title, null, 700, importedText = text) to events.size
         }.onSuccess { (entry, count) ->
             imported += entry
+            repository.saveImportedSongs(imported)
             selected = entry
             beatMs = entry.beatMs.toFloat()
             status = "已导入 ${entry.title}（$count 个事件）"

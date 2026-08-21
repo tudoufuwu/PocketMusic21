@@ -1,5 +1,11 @@
 ﻿# Android手机播放器接手说明
 
+## 2026-08-20 曲库 246 首本地候选基线
+
+- 主播放器曲库已由 240 首同步至 246 首：`song_241`–`song_243` 为《轨迹》《江南》《枫》，`song_244`–`song_246` 为《修炼爱情》《可惜没如果》《Megalovania》，推荐速度均为 500 ms/拍。
+- 六首均为完整 B 站音频自动转谱候选，Parser/时长门禁通过，但仍须游戏内试听；不要在发布说明中称为 final。
+- Windows 真值位于 `music_player_next/builtin_songs/`，Android 对应 `app/src/main/assets/songs/` 与 `library.json`；跨端门禁应以 243/243 为目标。
+
 ## 2026-08-20 v0.2.0 有声独立制谱器
 
 - 独立应用 `com.shadowtrace.scoremaker21` 已完成 v0.2.0 有声制谱：横屏 21 键每次点击都会立即播放本地游戏采样，无论当前是否录制；播放器生命周期结束时安全释放音频资源。

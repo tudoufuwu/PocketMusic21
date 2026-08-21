@@ -1,5 +1,33 @@
 # GitHub 发布交接（Android）
 
+## 当前本地曲库（2026-08-21）
+
+- Windows/Android 当前曲库为263首；新增 `song_258`–`song_263`：红豆、匆匆那年、素颜、一直很安静、传奇、千年之恋。
+- 六首均为 `requires_in_game_audition` 自动候选，未完成游戏内试听，不能称为 final。
+- GitHub 未上传，未创建 Release；263首包需完成本轮构建门禁后再记录附件哈希。
+- Android 263首候选构建：`artifacts/PocketMusic21-v0.1.0-263songs-no-recording-debug.apk`，10,166,706 bytes，SHA-256 `50EE7EEA67EE7599852B74945F2FDCB547491D61BC8CF5E05F0DA103962CFCA5`。
+
+## 2026-08-20 爆种 OLD-HITS04（暂不上传）
+
+- 当前本地双端曲库为 255 首；新增 `song_255`《一生所爱》，状态 `requires_in_game_audition`。
+- 《泡沫》《我们的爱》《God knows...》来源阻塞，未入库。
+- 主播放器 APK：`artifacts/PocketMusic21-v0.1.0-255songs-no-recording-debug.apk`，10,166,138 bytes，SHA-256 `4560A4F1EE19B434F8BAB7D23D3E4A83BC9ACD959672F44E29A588F6BCEACE28`；桌面副本同哈希。
+- 跨端检查与 Android test/lint/assembleDebug 已通过；GitHub 仍未上传。
+
+## 2026-08-20 请求批次 8 首本地曲库更新（暂不上传）
+
+- 当前本地双端曲库为 254 首；新增 `song_247`–`song_254` 八首候选：如愿、美丽的神话、月亮代表我的心、至少还有你、半岛铁盒、菊花台、Secret Base ～君がくれたもの～（10 years after ver.）、踏山河。
+- 八首均为 `requires_in_game_audition` 自动转谱候选，发布文案必须保留该状态；GitHub 仍未上传、未创建 Release。
+- 本批主播放器测试 APK：`artifacts/PocketMusic21-v0.1.0-254songs-no-recording-debug.apk`，10,166,067 bytes，SHA-256 `DA1F07246EFBB3FB1CA73806D3FC9C34363D8E7A3E3E06351B0BCDE7357F3985`；桌面副本同哈希。
+
+## 2026-08-20 本地曲库更新（暂不上传）
+
+- 当前本地双端曲库为 246 首；新增 `song_241`–`song_246` 六首候选（《轨迹》《江南》《枫》《修炼爱情》《可惜没如果》《Megalovania》），推荐 500 ms/拍。
+- 六首均为 `requires_in_game_audition` 自动转谱候选，发布文案必须保留该状态；GitHub 仍未上传、未创建 Release。
+- 开源日构建附件前先运行跨端检查，确认 254/254、缺失/独有/哈希/manifest 错误均为 0，再构建主播放器 APK、独立制谱器 APK 和 Windows EXE。
+
+本轮本地主播放器测试 APK：`artifacts/PocketMusic21-v0.1.0-246songs-no-recording-debug.apk`（10,165,499 bytes，SHA-256 `C0FF999BDD28A9F831EC337FAB4E9D5F7FCCAD90BE15C831CB06CF34A07ABF5B`）。Windows 对应 `music_player_next/dist/JianpuPlayerNext-v1.0.0-beta.43.exe`（14,871,029 bytes，SHA-256 `7CC455CFC9BE2657B1E3BF0F462DB1426FC523109AE43C6F3695311B602C62B5`）。
+
 ## 2026-08-20 当前待发布版本（暂不上传）
 
 - 发布时应提供两个可独立安装的 Android 附件，用户可以只下载其中一个：

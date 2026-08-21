@@ -18,4 +18,4 @@ jobs:
           java-version: '17'
       - uses: gradle/actions/setup-gradle@v4
       - name: Unit tests, lint and debug APK
-        run: ./gradlew --no-daemon testDebugUnitTest lintDebug assembleDebug
+        run: bash ./gradlew --no-daemon testDebugUnitTest lintDebug assembleDebug
