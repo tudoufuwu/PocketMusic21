@@ -1,5 +1,42 @@
 ﻿# Android手机播放器独立续跑日志
 
+## 2026-08-21 六首候选合并
+
+- 新增 `song_258`–`song_263`：红豆、匆匆那年、素颜、一直很安静、传奇、千年之恋。
+- 六首均有独立来源与候选报告，Parser round-trip、21键和时长门禁通过；统一保留 `requires_in_game_audition`，未标记 final。
+- 合并前基线257首，合并后双端曲库263首；需重新运行跨端检查、Android测试和构建后再生成最新APK。
+
+## 2026-08-20 爆种 OLD-HITS04 部分合并
+
+- 《一生所爱》已同步为 `song_255`；完整来源/候选报告通过 parser round-trip、21键和时长门禁，仍为 `requires_in_game_audition`。
+- 《泡沫》《我们的爱》《God knows...》来源阻塞，未生成或同步猜测谱。
+- 跨端检查：Android/Windows 255/255，缺失0、桌面独有0、哈希/资源不一致0、manifest错误0。
+- `testDebugUnitTest`、`lintDebug`、`assembleDebug` 成功。
+- 新 APK：`artifacts/PocketMusic21-v0.1.0-255songs-no-recording-debug.apk`，10,166,138 bytes，SHA-256 `4560A4F1EE19B434F8BAB7D23D3E4A83BC9ACD959672F44E29A588F6BCEACE28`；桌面副本同哈希。
+- GitHub 未上传；仍需真机游戏内试听确认。
+
+## 2026-08-20 请求批次 8 首完成候选同步
+
+- 在共享曲库最新 246 首基线上新增 `song_247`–`song_254`：如愿、美丽的神话、月亮代表我的心、至少还有你、半岛铁盒、菊花台、Secret Base ～君がくれたもの～（10 years after ver.）、踏山河。
+- 8 首均使用完整可复核来源并通过 Parser、21键范围及时长覆盖门禁，统一保留 `requires_in_game_audition`；不标记 final。
+- 跨端 254/254、主播放器与制谱器测试/Lint/assembleDebug 已通过；主播放器 APK `artifacts/PocketMusic21-v0.1.0-254songs-no-recording-debug.apk` 为 10,166,067 bytes，SHA-256 `DA1F07246EFBB3FB1CA73806D3FC9C34363D8E7A3E3E06351B0BCDE7357F3985`；GitHub 不上传。
+
+## 2026-08-20 爆种批次《修炼爱情》《可惜没如果》《Megalovania》
+
+- 三首完整 B 站音频重制候选已通过 Parser、21 键和时长覆盖：事件数 1640/1591/640，推荐速度均为 500 ms/拍，覆盖率约 98.7%/99.3%/99.6%。
+- 已同步 Windows `builtin_songs` 与 Android `song_244`–`song_246`，manifest/assets 计数为 246；统一保留 `requires_in_game_audition`，不得称为人工 final。
+- GitHub 仍未上传；原始音频、WAV、MIDI、NPZ 只留在 staging，不进入发布目录。
+
+- 246 首双端门禁、Windows 26/26、Android test/lint/assembleDebug 全部通过；APK `artifacts/PocketMusic21-v0.1.0-246songs-no-recording-debug.apk` 为 10,165,499 bytes，SHA-256 `C0FF999BDD28A9F831EC337FAB4E9D5F7FCCAD90BE15C831CB06CF34A07ABF5B`。
+- Windows beta.43：`music_player_next/dist/JianpuPlayerNext-v1.0.0-beta.43.exe`，14,871,029 bytes，SHA-256 `7CC455CFC9BE2657B1E3BF0F462DB1426FC523109AE43C6F3695311B602C62B5`。
+
+## 2026-08-20 《轨迹》《江南》《枫》三首候选同步
+
+- 从完整 B 站音频重新跑通三首：`BV1KE411b7by`《轨迹》321.282 秒、`BV1Sz411e7XX`《江南》262.207 秒、`BV11y4y187VB`《枫》275.011 秒。
+- 三首均生成 Basic Pitch MIDI 和 21 键候选，推荐 500 ms/拍；事件数分别为 2082、1464、1568，Parser round-trip 通过，时长覆盖通过。
+- 已同步 Windows `builtin_songs` 与 Android `song_241`–`song_243`，manifest/assets 计数为 243；均保留 `requires_in_game_audition`，等待真机/游戏试听，未标记 final。
+- 本轮只更新本地源码与候选包，GitHub 仍未上传；原始音频/MIDI/NPZ 不属于发布资产。
+
 ## 2026-08-20 发布前最后新增《尘外客》（当前最新）
 
 - 鸣潮先行公约官方 `BV1G48g68Ej1` p1 中文完整音频，演唱蔡明希（不才），实测 138.261 秒。

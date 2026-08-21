@@ -174,7 +174,7 @@ private class MusicOverlayPanel(
 
     private val prefs = service.getSharedPreferences("overlay_player", Context.MODE_PRIVATE)
     private val repository = SongRepository(service.applicationContext)
-    private val songs = repository.bundledSongs()
+    private var songs = repository.allSongs()
     private val handler = Handler(Looper.getMainLooper())
     private var root: View? = null
     private var params: WindowManager.LayoutParams? = null
@@ -567,6 +567,7 @@ private class MusicOverlayPanel(
     }
 
     private fun refreshList(query: String) {
+        songs = repository.allSongs()
         val normalized = query.trim()
         val result = if (normalized.isNotEmpty()) {
             songs.filter { it.title.contains(normalized, ignoreCase = true) }
