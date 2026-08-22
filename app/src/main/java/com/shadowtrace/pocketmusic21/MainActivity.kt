@@ -19,6 +19,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
@@ -37,6 +39,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.unit.dp
 import com.shadowtrace.pocketmusic21.data.SongParser
 import com.shadowtrace.pocketmusic21.data.SongRepository
@@ -46,6 +49,7 @@ import com.shadowtrace.pocketmusic21.automation.PlaybackController
 import com.shadowtrace.pocketmusic21.automation.AppVisibility
 import com.shadowtrace.pocketmusic21.model.SongEntry
 import java.util.UUID
+import kotlin.math.roundToInt
 
 class MainActivity : ComponentActivity() {
     override fun onStart() {
@@ -71,13 +75,20 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun PocketMusicApp() {
     val context = LocalContext.current
+    // Use the device's shortest dimension so a phone rotated to landscape still
+    // gets the dedicated floating-library entry point.
+    val isCompactScreen = LocalConfiguration.current.smallestScreenWidthDp < 600
     val repository = remember { SongRepository(context.applicationContext) }
+    val prefs = remember { context.getSharedPreferences("overlay_player", android.content.Context.MODE_PRIVATE) }
     val bundled = remember { repository.bundledSongs() }
     val imported = remember { mutableStateListOf<SongEntry>().apply { addAll(repository.importedSongs()) } }
     val queue = remember { mutableStateListOf<SongEntry>() }
     var query by remember { mutableStateOf("") }
     var selected by remember { mutableStateOf<SongEntry?>(bundled.firstOrNull()) }
     var beatMs by remember { mutableFloatStateOf((selected?.beatMs ?: 700).toFloat()) }
+    var speedRate by remember {
+        mutableFloatStateOf(selected?.let { prefs.getFloat("speed_${it.id}", 1f) } ?: 1f)
+    }
     var status by remember { mutableStateOf("曲库 ${bundled.size + imported.size} 首") }
     var showCalibration by remember { mutableStateOf(false) }
 
@@ -93,6 +104,7 @@ fun PocketMusicApp() {
             repository.saveImportedSongs(imported)
             selected = entry
             beatMs = entry.beatMs.toFloat()
+            speedRate = prefs.getFloat("speed_${entry.id}", 1f)
             status = "已导入 ${entry.title}（$count 个事件）"
         }.onFailure { status = "导入失败：${it.message}" }
     }
@@ -125,6 +137,21 @@ fun PocketMusicApp() {
                         Text(if (showCalibration) "✓ 校准网格" else "校准网格")
                     }
                 }
+                if (isCompactScreen && !showCalibration) {
+                    Button(
+                        onClick = {
+                            val service = MusicAccessibilityService.instance
+                            if (service == null) {
+                                status = "请启用“21键悬浮演奏”无障碍服务，返回后再点一次"
+                                context.startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
+                            } else {
+                                service.showOverlay()
+                                status = "悬浮曲库已打开；可直接搜索、选歌和播放"
+                            }
+                        },
+                        modifier = Modifier.fillMaxWidth().padding(horizontal = 16.dp),
+                    ) { Text("打开悬浮曲库") }
+                }
                 if (showCalibration) {
                     CalibrationScreen(modifier = Modifier.weight(1f))
                 } else {
@@ -154,6 +181,7 @@ fun PocketMusicApp() {
                                     .clickable {
                                         selected = song
                                         beatMs = song.beatMs.toFloat()
+                                        speedRate = prefs.getFloat("speed_${song.id}", 1f)
                                         status = "已选择 ${song.title}"
                                     },
                             ) { Text(song.title, modifier = Modifier.padding(10.dp)) }
@@ -169,13 +197,40 @@ fun PocketMusicApp() {
                             onSuccess = { "${it.events.size} 个事件 · ${"%.1f".format(it.totalBeats)} 拍" },
                             onFailure = { "解析失败：${it.message}" },
                         ))
-                        Text("一拍 ${beatMs.toInt()} ms")
+                        val effectiveBeatMs = (beatMs / speedRate).roundToInt().coerceAtLeast(1)
+                        Text("一拍 $effectiveBeatMs ms · ${"%.2f".format(speedRate)}x")
                         Slider(
                             value = beatMs,
-                            onValueChange = { beatMs = it },
+                            onValueChange = {
+                                beatMs = it
+                                prefs.edit().putInt("beat_${song.id}", it.roundToInt()).apply()
+                            },
                             valueRange = 200f..1800f,
                             steps = 31,
                         )
+                        Row(
+                            modifier = Modifier.horizontalScroll(rememberScrollState()),
+                            horizontalArrangement = Arrangement.spacedBy(4.dp),
+                        ) {
+                            listOf(0.5f, 0.75f, 1f, 1.25f, 1.5f, 2f, 3f, 4f).forEach { preset ->
+                                Button(onClick = {
+                                    speedRate = preset
+                                    prefs.edit().putFloat("speed_${song.id}", preset).apply()
+                                }) { Text("${"%.2f".format(preset)}x") }
+                            }
+                        }
+                        Slider(
+                            value = speedRate,
+                            onValueChange = {
+                                speedRate = (it * 100f).roundToInt() / 100f
+                                prefs.edit().putFloat("speed_${song.id}", speedRate).apply()
+                            },
+                            valueRange = 0.25f..4f,
+                            steps = 374,
+                        )
+                        if (speedRate > 2f) {
+                            Text("实验档：超过2x可能丢键或连键", color = MaterialTheme.colorScheme.error)
+                        }
                         Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                             Button(onClick = { beatMs = song.beatMs.toFloat() }) { Text("推荐速度") }
                             Button(onClick = { queue += song; status = "已加入队列（${queue.size}）" }) { Text("加入队列") }

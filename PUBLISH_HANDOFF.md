@@ -2,6 +2,9 @@
 
 ## 当前本地曲库（2026-08-21）
 
+- Windows/Android 当前曲库为 264 首；新增 `song_264`《夏空的歌（短原版）》，推荐 535 ms/拍，状态 `requires_in_game_audition`。
+- Android APK：`artifacts/PocketMusic21-v0.1.0-264songs-no-recording-debug.apk`，10,166,777 bytes，SHA-256 `6B69587A1D1DD77F1BE7928B6B9A5D2609AD7784C85EB49857109BE790C02707`。
+
 - Windows/Android 当前曲库为263首；新增 `song_258`–`song_263`：红豆、匆匆那年、素颜、一直很安静、传奇、千年之恋。
 - 六首均为 `requires_in_game_audition` 自动候选，未完成游戏内试听，不能称为 final。
 - GitHub 未上传，未创建 Release；263首包需完成本轮构建门禁后再记录附件哈希。
@@ -77,3 +80,12 @@ gh release create v0.1.0-mvp artifacts/PocketMusic21-v0.1.0-240songs-no-recordin
 ```
 
 发布前再次确认 Release 页面包含两个不同 applicationId 的附件，并在说明中区分“主播放器无录制”和“独立制谱器半成品”。
+# Android 发布交接
+
+## 当前待发布版本（2026-08-22）
+
+- 曲库 267 首，包含 `song_264`–`song_267`；新增候选仍需游戏内试听确认。
+- 悬浮曲库入口兼容横屏手机；悬浮面板将基础节拍与倍速分开，倍速支持直接输入 `0.25`–`4.00`。
+- Debug APK：`app/build/outputs/apk/debug/app-debug.apk`。
+- APK SHA-256：`C94255ECE23B76FFF6042A091E97480900E36E83A0FEC5CD3CEFB5951CC943D5`。
+- GitHub/Gitee Release 和自动更新源尚未发布。

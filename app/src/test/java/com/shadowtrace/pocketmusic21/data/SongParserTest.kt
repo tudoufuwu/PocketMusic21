@@ -25,10 +25,10 @@ class SongParserTest {
     }
 
     @Test
-    fun parsesAll263BundledSongs() {
+    fun parsesAll267BundledSongs() {
         val songDir = File("src/main/assets/songs")
         val files = songDir.listFiles { file -> file.extension == "txt" }?.sortedBy { it.name }.orEmpty()
-        assertEquals(263, files.size)
+        assertEquals(267, files.size)
         files.forEach { file ->
             val events = SongParser.parse(file.readText(Charsets.UTF_8))
             assertTrue(events.isNotEmpty(), file.name)

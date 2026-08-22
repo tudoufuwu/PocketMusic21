@@ -14,6 +14,7 @@ import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import android.text.Editable
+import android.text.InputType
 import android.text.TextUtils
 import android.text.TextWatcher
 import android.view.Gravity
@@ -23,6 +24,7 @@ import android.view.ViewGroup
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.view.accessibility.AccessibilityEvent
+import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.BaseAdapter
 import android.widget.Button
@@ -37,6 +39,7 @@ import com.shadowtrace.pocketmusic21.data.SongRepository
 import com.shadowtrace.pocketmusic21.model.SongEntry
 import java.lang.ref.WeakReference
 import kotlin.math.abs
+import kotlin.math.roundToInt
 
 class MusicAccessibilityService : AccessibilityService() {
     private lateinit var windowManager: WindowManager
@@ -187,12 +190,14 @@ private class MusicOverlayPanel(
     private var searchView: EditText? = null
     private var listView: ListView? = null
     private var listAdapter: SongListAdapter? = null
-    private var speedView: TextView? = null
+    private var beatView: TextView? = null
+    private var speedInput: EditText? = null
     private var modeButton: Button? = null
     private var autoButton: Button? = null
     private var favoriteButton: Button? = null
     private var selected: SongEntry = initialSong()
-    private var beatMs: Int = storedBeat(selected)
+    private var baseBeatMs: Int = storedBeat(selected)
+    private var speedRate: Float = storedSpeedRate(selected)
     private var playMode = runCatching {
         PlayMode.valueOf(prefs.getString("play_mode", PlayMode.STOP.name)!!)
     }.getOrDefault(PlayMode.STOP)
@@ -363,14 +368,42 @@ private class MusicOverlayPanel(
         favoriteButton = compactButton("") { toggleFavorite() }.also(options::addView)
         panel.addView(options)
 
-        val speed = row()
-        speed.addView(compactButton("－") { changeSpeed(-25) })
-        speedView = text("", 13f).apply {
+        val beat = row()
+        beat.addView(compactButton("－") { changeBeat(-10) })
+        beatView = text("", 13f).apply {
             gravity = Gravity.CENTER
             layoutParams = LinearLayout.LayoutParams(0, dp(42), 1f)
+        }.also(beat::addView)
+        beat.addView(compactButton("＋") { changeBeat(10) })
+        beat.addView(compactButton("推荐") { changeBeat(selected.beatMs - baseBeatMs) })
+        panel.addView(beat)
+
+        val speed = row()
+        speed.addView(text("倍速", 13f).apply {
+            gravity = Gravity.CENTER
+            layoutParams = LinearLayout.LayoutParams(dp(46), dp(42))
+        })
+        speedInput = EditText(service).apply {
+            hint = "1.00"
+            setHintTextColor(0xFFB7BDC7.toInt())
+            setTextColor(Color.WHITE)
+            setSingleLine(true)
+            textSize = 13f
+            gravity = Gravity.CENTER
+            inputType = InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_FLAG_DECIMAL
+            imeOptions = EditorInfo.IME_ACTION_DONE
+            background = rounded(0xFF303844.toInt(), dp(8).toFloat())
+            layoutParams = LinearLayout.LayoutParams(0, dp(42), 1f)
+            setOnFocusChangeListener { _, hasFocus -> if (hasFocus) selectAll() }
+            setOnEditorActionListener { _, actionId, _ ->
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    applySpeedInput()
+                    true
+                } else false
+            }
         }.also(speed::addView)
-        speed.addView(compactButton("＋") { changeSpeed(25) })
-        speed.addView(compactButton("推荐") { setSpeed(selected.beatMs) })
+        speed.addView(compactButton("应用") { applySpeedInput() })
+        speed.addView(compactButton("恢复1x") { setSpeedRate(1f) })
         panel.addView(speed)
 
         val transport = row()
@@ -438,7 +471,8 @@ private class MusicOverlayPanel(
 
     private fun selectSong(song: SongEntry) {
         selected = song
-        beatMs = storedBeat(song)
+        baseBeatMs = storedBeat(song)
+        speedRate = storedSpeedRate(song)
         addRecent(song.id)
         prepareSelected()
         searchView?.setText(song.title)
@@ -448,7 +482,7 @@ private class MusicOverlayPanel(
     }
 
     private fun prepareSelected(): Boolean = runCatching {
-        PlaybackController.prepare(repository.parse(selected), beatMs)
+        PlaybackController.prepare(repository.parse(selected), effectiveBeatMs())
         true
     }.getOrElse {
         PlaybackController.stop("曲谱解析失败：${it.message}")
@@ -479,11 +513,28 @@ private class MusicOverlayPanel(
         refreshStatus()
     }
 
-    private fun changeSpeed(delta: Int) = setSpeed((beatMs + delta).coerceIn(200, 1800))
+    private fun changeBeat(delta: Int) {
+        baseBeatMs = (baseBeatMs + delta).coerceIn(50, 5000)
+        prefs.edit().putInt("beat_${selected.id}", baseBeatMs).apply()
+        prepareSelected()
+        refreshButtons()
+    }
 
-    private fun setSpeed(value: Int) {
-        beatMs = value
-        prefs.edit().putInt("beat_${selected.id}", beatMs).apply()
+    private fun applySpeedInput() {
+        val value = speedInput?.text?.toString()?.trim()?.removeSuffix("x")?.toFloatOrNull()
+        if (value == null || value !in 0.25f..4f) {
+            speedInput?.error = "请输入0.25到4.00"
+            return
+        }
+        speedInput?.error = null
+        speedInput?.clearFocus()
+        hideKeyboard()
+        setSpeedRate(value)
+    }
+
+    private fun setSpeedRate(value: Float) {
+        speedRate = (value.coerceIn(0.25f, 4f) * 100f).roundToInt() / 100f
+        prefs.edit().putFloat("speed_${selected.id}", speedRate).apply()
         if (PlaybackController.state == PlaybackController.State.PLAYING ||
             PlaybackController.state == PlaybackController.State.PAUSED
         ) PlaybackController.stop("速度已修改，请重新播放")
@@ -558,7 +609,8 @@ private class MusicOverlayPanel(
             }
             PlayMode.SEQUENCE -> {
                 selected = songs[(songs.indexOfFirst { it.id == selected.id } + 1) % songs.size]
-                beatMs = storedBeat(selected)
+                baseBeatMs = storedBeat(selected)
+                speedRate = storedSpeedRate(selected)
                 addRecent(selected.id)
                 prepareSelected()
                 PlaybackController.startFromOverlay(service)
@@ -581,7 +633,11 @@ private class MusicOverlayPanel(
     }
 
     private fun refreshButtons() {
-        speedView?.text = "${selected.title}\n$beatMs ms/拍"
+        beatView?.text = "$baseBeatMs ms/拍 · 实际 ${effectiveBeatMs()} ms"
+        speedInput?.let { input ->
+            if (!input.hasFocus()) input.setText("%.2f".format(speedRate))
+            input.setTextColor(if (speedRate > 2f) 0xFFFF6B6B.toInt() else Color.WHITE)
+        }
         autoButton?.text = if (autoPlay) "点歌即播✓" else "点歌即播×"
         modeButton?.text = playMode.label
         favoriteButton?.text = if (selected.id in favoriteIds()) "★ 收藏" else "☆ 收藏"
@@ -601,6 +657,17 @@ private class MusicOverlayPanel(
     }
 
     private fun storedBeat(song: SongEntry) = prefs.getInt("beat_${song.id}", song.beatMs)
+
+    private fun storedSpeedRate(song: SongEntry) =
+        prefs.getFloat("speed_${song.id}", 1f).coerceIn(0.25f, 4f)
+
+    private fun effectiveBeatMs() = (baseBeatMs / speedRate).roundToInt().coerceAtLeast(1)
+
+    private fun cycleSpeedPreset() {
+        val presets = floatArrayOf(0.5f, 0.75f, 1f, 1.25f, 1.5f, 2f, 3f, 4f)
+        val next = presets.firstOrNull { it > speedRate + 0.001f } ?: presets.first()
+        setSpeedRate(next)
+    }
 
     private fun addRecent(id: String) {
         val ids = (listOf(id) + recentIds()).distinct().take(10)
@@ -718,6 +785,8 @@ private class MusicOverlayPanel(
         searchView = null
         listView = null
         listAdapter = null
+        beatView = null
+        speedInput = null
     }
 
     private fun dp(value: Int) = (value * service.resources.displayMetrics.density + 0.5f).toInt()

@@ -1686,162 +1686,190 @@
       "title": "轨迹",
       "asset": "songs/song_241.txt",
       "beatMs": 500,
-      "sha256": "9ff8e139b94aee828922dc6ecdc3e34b0e9ccc3555a72d8d3c58fe4d2c343fb5"
+      "sha256": "75719a17867d6377317760c423f458818ba00b8c497b26736ce78a141585e3e9"
     },
     {
       "id": "song_242",
       "title": "江南",
       "asset": "songs/song_242.txt",
       "beatMs": 500,
-      "sha256": "fbfd3a92e845f5ed97eba3687e09f6c49ac4f9996c6eca2fd17c69f845a74d7b"
+      "sha256": "a5e013efbf6ae0b6576ad6871266a2016cf9ea6baa3fcf3e89fc06398b698a82"
     },
     {
       "id": "song_243",
       "title": "枫",
       "asset": "songs/song_243.txt",
       "beatMs": 500,
-      "sha256": "a50a69df8011fed9df67c208be3c8b0a1b1aa4e0868a7318fe6d5046d5635930"
+      "sha256": "2e5d4a65f22c835b7c3eecfd52fe671d0ba73b7e35ebe0126493ae0a205decde"
     },
     {
       "id": "song_244",
       "title": "修炼爱情",
       "asset": "songs/song_244.txt",
       "beatMs": 500,
-      "sha256": "2531e3577684ba10023828d96169b7538e3b059ae01fbecc9c5cb012c1e228af"
+      "sha256": "e629401e56a7945cab6b943c55c61e8c7ad78edd1a7bb5a6112348fd16a0f2d7"
     },
     {
       "id": "song_245",
       "title": "可惜没如果",
       "asset": "songs/song_245.txt",
       "beatMs": 500,
-      "sha256": "67d244c43cf997e67bcd80261119a0e00a6ca8ad1d860a26f4fc69459c816790"
+      "sha256": "fa125bcf5b5645c7042747bdeb906d6630385e781aa6c020a6537beffa9eb947"
     },
     {
       "id": "song_246",
       "title": "Megalovania",
       "asset": "songs/song_246.txt",
       "beatMs": 500,
-      "sha256": "6b60299588c469e21700bf969fa626f6ff9098f9cff34251c73cead767eaf5da"
+      "sha256": "5bbd888ed8aa032e735d228d68576b358f9b3c1ee813f63b902da3735a766134"
     },
     {
       "id": "song_247",
       "title": "如愿",
       "asset": "songs/song_247.txt",
       "beatMs": 500,
-      "sha256": "7453a4754e7556c6622ef2753b5815a70bb5f44fa28bb218565a41a1240383ee"
+      "sha256": "a9dc44bb488e87462ba01c20f0e05f244f7dfbe1f52308b08daa0c6a73b8a6fa"
     },
     {
       "id": "song_248",
       "title": "美丽的神话",
       "asset": "songs/song_248.txt",
       "beatMs": 500,
-      "sha256": "c5159fd196ac1e943bce7d151469639f71fa26d3a2e9352450783ecf75fdd140"
+      "sha256": "5ddafada7b9da11ca483783dce746b1178066725c6f7a31415541d35a79990d6"
     },
     {
       "id": "song_249",
       "title": "月亮代表我的心",
       "asset": "songs/song_249.txt",
       "beatMs": 500,
-      "sha256": "8c0dc7cd209723017501791f7a42496404fc40ab2f102aa39bbba59c67ea3ca4"
+      "sha256": "6a7a51610192da390754aa2ad1dd0b0ca5bc5b2e2efb49e27f6097d722368df9"
     },
     {
       "id": "song_250",
       "title": "至少还有你",
       "asset": "songs/song_250.txt",
       "beatMs": 500,
-      "sha256": "a33e0b487be5d1e75f4ed2696f8a0090ea19daebc0c1b5bc1c0548d16211752f"
+      "sha256": "63d49e49dd378ad161bf0abd4d01d6b1342644829b749204ff81436aa77b2b1c"
     },
     {
       "id": "song_251",
       "title": "半岛铁盒",
       "asset": "songs/song_251.txt",
       "beatMs": 500,
-      "sha256": "401d382f319018e220ab3df85e48c679c2cdb23f6def355c070239a146652ab2"
+      "sha256": "53553b93e3da0f96c934c496f33f2bdb32afb1b814d1554cfd841b5b04f58e09"
     },
     {
       "id": "song_252",
       "title": "菊花台",
       "asset": "songs/song_252.txt",
       "beatMs": 500,
-      "sha256": "dd1cbea78410974286b977b93d46d744404a0084855ca9e6141bdb58e16432b0"
+      "sha256": "6d4ca4443271d2b0efa48f9e9d5ad51a8134cf501adf815530c48ca670c0a9f4"
     },
     {
       "id": "song_253",
       "title": "Secret Base ～君がくれたもの～（10 years after ver.）",
       "asset": "songs/song_253.txt",
       "beatMs": 500,
-      "sha256": "69e81e1812eab9fadb2aa7d8468a7b99657fc94d4a9ddf1631259b053dd8f88e"
+      "sha256": "eb818272cb6d9f0000e0337c50f501aa3124fa8895c9c1829f3093b6ffee8088"
     },
     {
       "id": "song_254",
       "title": "踏山河",
       "asset": "songs/song_254.txt",
       "beatMs": 500,
-      "sha256": "b06a4de6b51b4f1433e0148ff352aa794975335fd57b66fa70b2237807513804"
+      "sha256": "abb43a2bd8c95f5ee4893fcea6c1bff6bc2e10cffcaeac02d2a0e8eeabddaf78"
     },
     {
       "id": "song_255",
       "title": "一生所爱",
       "asset": "songs/song_255.txt",
       "beatMs": 500,
-      "sha256": "cb87148f5400290e71bface491f84b95f88f00532d4ba20fcad4fe996c413fac"
+      "sha256": "7b3fdfc9229744044301dfb8f9f3f72cdfe73e3b3d28dae380236a673cefab3d"
     },
     {
       "id": "song_256",
       "title": "God knows...",
       "asset": "songs/song_256.txt",
       "beatMs": 500,
-      "sha256": "1c2eaf6c49edb4b9cb0a77d904fa73f5e37054e0e9071fe0b9bc80a65e21a655"
+      "sha256": "f2ff691586a1fdfdc7db59b863ad17023f9634ce7e8239d9b8ae28534ad88145"
     },
     {
       "id": "song_257",
       "title": "泡沫",
       "asset": "songs/song_257.txt",
       "beatMs": 500,
-      "sha256": "5498dd6cc7dcc2fa863c51b49a878cabc356c8e07193d66f2891dfacec1798bf"
+      "sha256": "0e9e80307cddb7ec0f7ae99b9847abe5d7b43ab087e5b03b51abef7238e8606e"
     },
     {
       "id": "song_258",
       "title": "红豆",
       "asset": "songs/song_258.txt",
       "beatMs": 500,
-      "sha256": "93254e609427429889c5cdd477110697f2ca9ded2719e2330b110766c879f7d8"
+      "sha256": "0628f20bbf0b0c9b64f70d0b3f658588c54a1437ad920d9d917604920b32adc4"
     },
     {
       "id": "song_259",
       "title": "匆匆那年",
       "asset": "songs/song_259.txt",
       "beatMs": 500,
-      "sha256": "6da0d99a84314c05637b4e4364fd9890529a97627633838c82451af8f109ea1d"
+      "sha256": "4cee574baee4417a8379a99c2d9b392122ea0df6fea5a1c4c1d4439c79a09d28"
     },
     {
       "id": "song_260",
       "title": "素颜",
       "asset": "songs/song_260.txt",
       "beatMs": 500,
-      "sha256": "d094711cf9f614beb9fedeb5019ae39d1f9933d044a32fe2e9974b59bbdfd6fa"
+      "sha256": "522d0c2fb915144b68df934a33148645ea30afcb14c1547202f91e7187ab9b39"
     },
     {
       "id": "song_261",
       "title": "一直很安静",
       "asset": "songs/song_261.txt",
       "beatMs": 500,
-      "sha256": "1f3bc673ad23a3da88fbb398d66fa3316b873e6bd63a9164c18a3c48098cb0ad"
+      "sha256": "923338c8ed45f555fd279b79c1152d068c22f90d735d0af76c4c20b196fcd41c"
     },
     {
       "id": "song_262",
       "title": "传奇",
       "asset": "songs/song_262.txt",
       "beatMs": 500,
-      "sha256": "7de72f2c0921850136c08a144a8b267c1cdab85ba22a72ecea7933b179435339"
+      "sha256": "ed6048a037db9e083ec175f361afbb41d629bc29803f629facd4f9a7dc1b2e33"
     },
     {
       "id": "song_263",
       "title": "千年之恋",
       "asset": "songs/song_263.txt",
       "beatMs": 827,
-      "sha256": "55563d753e018c2ec19ad886265d085be6943463038e3d245de12697e7470d8c"
+      "sha256": "a6df7eae38643e42f68a183c98d8276cf022866dade13ad0f7a8f3aa2465348e"
+    },
+    {
+      "id": "song_264",
+      "title": "夏空的歌（短原版）",
+      "asset": "songs/song_264.txt",
+      "beatMs": 535,
+      "sha256": "8fb12d63fa3e3f3dae43abd591a46b43d640750f8f824b1736df4e8be6cdbb91"
+    },
+    {
+      "id": "song_265",
+      "title": "一直很安静（人声重跑）",
+      "asset": "songs/song_265.txt",
+      "beatMs": 500,
+      "sha256": "e37c04f39e909a01d2d2238ee85d8eaf488621b90cbdcd264d1738998b770e2b"
+    },
+    {
+      "id": "song_266",
+      "title": "夜空中最亮的星（人声重跑）",
+      "asset": "songs/song_266.txt",
+      "beatMs": 544,
+      "sha256": "c8b31a211696c60ba3b090d40ad9d8b66b6f3e7b10958a17b04e196e599b5247"
+    },
+    {
+      "id": "song_267",
+      "title": "红豆（人声重跑）",
+      "asset": "songs/song_267.txt",
+      "beatMs": 500,
+      "sha256": "7e6a2bfd01729892728faef6535c5eee6801f367753cfe15ed781313ed39b6b05"
     }
   ],
-  "count": 263
+  "count": 267
 }
