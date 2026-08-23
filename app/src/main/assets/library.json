@@ -1868,8 +1868,29 @@
       "title": "红豆（人声重跑）",
       "asset": "songs/song_267.txt",
       "beatMs": 500,
-      "sha256": "7e6a2bfd01729892728faef6535c5eee6801f367753cfe15ed781313ed39b6b05"
+      "sha256": "7e6a2bfd01729892728faf6535c5eee6801f367753cfe15ed781313ed39b6b05"
+    },
+    {
+      "id": "song_268",
+      "title": "孑遗者的故乡",
+      "asset": "songs/song_268.txt",
+      "beatMs": 500,
+      "sha256": "53147d59b6d98736548922da7e38904ed1ff3e6ae7d73e8ff348226842bf25ba"
+    },
+    {
+      "id": "song_269",
+      "title": "朝焼けのスターマイン（人声重跑）",
+      "asset": "songs/song_269.txt",
+      "beatMs": 500,
+      "sha256": "b9269d1bab3aeca03bab877bfb1334b67fca6e981c92d33fac222d6ee30ccacf"
+    },
+    {
+      "id": "song_270",
+      "title": "Ring of Fortune（人声重跑）",
+      "asset": "songs/song_270.txt",
+      "beatMs": 500,
+      "sha256": "1f12c7d77672e28d05ea334f9a40b484a24a3c7b7575ed33a00b4dbea831fdb9"
     }
   ],
-  "count": 267
+  "count": 270
 }

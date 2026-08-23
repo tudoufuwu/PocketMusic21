@@ -1,5 +1,10 @@
-﻿# Android手机播放器独立续跑日志
+# Android手机播放器独立续跑日志
 
+## 2026-08-22 《孑遗者的故乡》候选同步
+
+- Windows `builtin_songs/孑遗者的故乡.txt` 与 Android `song_268.txt` 已同步，`library.json` 更新为 268 首，推荐 500 ms/拍。
+- 完整音频自动转谱候选：166 个事件、81.32 秒来源、覆盖率 100.2%，Parser/21 键门禁通过；保留 `requires_in_game_audition`，等待游戏内试听。
+- 仅更新曲库源文件和日志，未构建或上传 APK；下次 Android/Windows 打包时纳入。
 ## 2026-08-21 夏空的歌短原版
 
 - 新增 `song_264`《夏空的歌（短原版）》，推荐 535 ms/拍，与 Windows 同步为 264 首。

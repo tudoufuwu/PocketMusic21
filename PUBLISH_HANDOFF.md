@@ -1,5 +1,10 @@
 # GitHub 发布交接（Android）
 
+## 当前待发布增量（2026-08-22）
+
+- 曲库已同步至 268 首，新增 song_268《孑遗者的故乡》，推荐 500 ms/拍。
+- 该曲为自动转谱候选，需游戏内试听确认；本轮尚未构建 APK，下一次构建时一并纳入。
+
 ## 当前本地曲库（2026-08-21）
 
 - Windows/Android 当前曲库为 264 首；新增 `song_264`《夏空的歌（短原版）》，推荐 535 ms/拍，状态 `requires_in_game_audition`。
@@ -89,3 +94,8 @@ gh release create v0.1.0-mvp artifacts/PocketMusic21-v0.1.0-240songs-no-recordin
 - Debug APK：`app/build/outputs/apk/debug/app-debug.apk`。
 - APK SHA-256：`C94255ECE23B76FFF6042A091E97480900E36E83A0FEC5CD3CEFB5951CC943D5`。
 - GitHub/Gitee Release 和自动更新源尚未发布。
+# 当前待发布版本（2026-08-23）
+
+- Android 曲库为 270 首，`song_269` 和 `song_270` 已同步；跨端检查 270/270 通过。
+- Debug APK：`app/build/outputs/apk/debug/app-debug.apk`，10,167,203 bytes，SHA-256 `27997EC2BA63D5981FA918F32E369859E702EF2CC0A9BCC00A4CC6CF4377432F`。
+- 构建命令：`.\gradlew.bat :app:assembleDebug --no-daemon`。
