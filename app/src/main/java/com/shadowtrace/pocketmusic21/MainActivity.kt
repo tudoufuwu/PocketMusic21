@@ -24,6 +24,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -36,6 +37,7 @@ import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -49,6 +51,11 @@ import com.shadowtrace.pocketmusic21.automation.PlaybackController
 import com.shadowtrace.pocketmusic21.automation.AppVisibility
 import com.shadowtrace.pocketmusic21.model.SongEntry
 import java.util.UUID
+import java.net.URL
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import org.json.JSONObject
 import kotlin.math.roundToInt
 
 class MainActivity : ComponentActivity() {
@@ -72,6 +79,10 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+private const val UPDATE_MANIFEST_URL = "https://xiaxia.ymjhcycg.dpdns.org/updates/manifest.json"
+private const val UPDATE_HISTORY_URL = "https://xiaxia.ymjhcycg.dpdns.org/updates/index.html"
+private const val APP_VERSION = "0.1.0-mvp-20260826"
+
 @Composable
 fun PocketMusicApp() {
     val context = LocalContext.current
@@ -91,6 +102,31 @@ fun PocketMusicApp() {
     }
     var status by remember { mutableStateOf("曲库 ${bundled.size + imported.size} 首") }
     var showCalibration by remember { mutableStateOf(false) }
+    var updateDialog by remember { mutableStateOf<String?>(null) }
+    val updateScope = rememberCoroutineScope()
+
+    fun checkForUpdates() {
+        status = "正在检查更新…"
+        updateScope.launch {
+            val result = withContext(Dispatchers.IO) {
+                runCatching {
+                    val connection = URL(UPDATE_MANIFEST_URL).openConnection()
+                    connection.connectTimeout = 8000
+                    connection.readTimeout = 8000
+                    val root = JSONObject(connection.getInputStream().bufferedReader().use { it.readText() })
+                    val latest = root.optJSONObject("platforms")?.optJSONObject("android")?.optString("latestVersion")
+                        ?: root.optString("androidVersion", "未知")
+                    val notes = root.optJSONArray("releaseNotes")
+                    val noteText = buildString {
+                        if (notes != null) for (index in 0 until notes.length()) append("\n• ").append(notes.optString(index))
+                    }
+                    "更新源连接正常\n当前版本：$APP_VERSION\n最新版本：$latest\n曲库：${root.optInt("libraryCount", 0)} 首$noteText"
+                }.getOrElse { "检查更新失败：${it.message ?: "网络不可用"}" }
+            }
+            status = result.lineSequence().firstOrNull().orEmpty()
+            updateDialog = result
+        }
+    }
 
     fun readImported(uri: Uri) {
         runCatching {
@@ -136,6 +172,10 @@ fun PocketMusicApp() {
                     Button(onClick = { showCalibration = true }) {
                         Text(if (showCalibration) "✓ 校准网格" else "校准网格")
                     }
+                    Button(onClick = { checkForUpdates() }) { Text("检查更新") }
+                    Button(onClick = {
+                        context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(UPDATE_HISTORY_URL)))
+                    }) { Text("历史版本") }
                 }
                 if (isCompactScreen && !showCalibration) {
                     Button(
@@ -254,6 +294,20 @@ fun PocketMusicApp() {
                 }
                     }
                 }
+            }
+            updateDialog?.let { message ->
+                AlertDialog(
+                    onDismissRequest = { updateDialog = null },
+                    title = { Text("更新中心") },
+                    text = { Text(message) },
+                    confirmButton = {
+                        Button(onClick = {
+                            context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(UPDATE_HISTORY_URL)))
+                            updateDialog = null
+                        }) { Text("查看历史与下载") }
+                    },
+                    dismissButton = { Button(onClick = { updateDialog = null }) { Text("关闭") } },
+                )
             }
         }
     }
