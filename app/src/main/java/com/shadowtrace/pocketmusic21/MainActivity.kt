@@ -81,7 +81,7 @@ class MainActivity : ComponentActivity() {
 
 private const val UPDATE_MANIFEST_URL = "https://xiaxia.ymjhcycg.dpdns.org/updates/manifest.json"
 private const val UPDATE_HISTORY_URL = "https://xiaxia.ymjhcycg.dpdns.org/updates/index.html"
-private const val APP_VERSION = "0.1.0-mvp-20260826"
+private const val APP_VERSION = "0.1.0-mvp-20260826-r2"
 
 @Composable
 fun PocketMusicApp() {
