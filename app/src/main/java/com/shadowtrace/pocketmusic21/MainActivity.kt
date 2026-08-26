@@ -103,16 +103,19 @@ fun PocketMusicApp() {
     var status by remember { mutableStateOf("曲库 ${bundled.size + imported.size} 首") }
     var showCalibration by remember { mutableStateOf(false) }
     var updateDialog by remember { mutableStateOf<String?>(null) }
+    var isCheckingUpdate by remember { mutableStateOf(false) }
     val updateScope = rememberCoroutineScope()
 
     fun checkForUpdates() {
+        if (isCheckingUpdate) return
+        isCheckingUpdate = true
         status = "正在检查更新…"
         updateScope.launch {
             val result = withContext(Dispatchers.IO) {
                 runCatching {
                     val connection = URL(UPDATE_MANIFEST_URL).openConnection()
-                    connection.connectTimeout = 8000
-                    connection.readTimeout = 8000
+                    connection.connectTimeout = 4000
+                    connection.readTimeout = 4000
                     val root = JSONObject(connection.getInputStream().bufferedReader().use { it.readText() })
                     val latest = root.optJSONObject("platforms")?.optJSONObject("android")?.optString("latestVersion")
                         ?: root.optString("androidVersion", "未知")
@@ -125,6 +128,7 @@ fun PocketMusicApp() {
             }
             status = result.lineSequence().firstOrNull().orEmpty()
             updateDialog = result
+            isCheckingUpdate = false
         }
     }
 
@@ -172,7 +176,9 @@ fun PocketMusicApp() {
                     Button(onClick = { showCalibration = true }) {
                         Text(if (showCalibration) "✓ 校准网格" else "校准网格")
                     }
-                    Button(onClick = { checkForUpdates() }) { Text("检查更新") }
+                    Button(onClick = { checkForUpdates() }, enabled = !isCheckingUpdate) {
+                        Text(if (isCheckingUpdate) "检查中…" else "检查更新")
+                    }
                     Button(onClick = {
                         context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(UPDATE_HISTORY_URL)))
                     }) { Text("历史版本") }
