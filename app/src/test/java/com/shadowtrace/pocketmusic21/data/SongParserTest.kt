@@ -25,10 +25,19 @@ class SongParserTest {
     }
 
     @Test
-    fun parsesAll294BundledSongs() {
+    fun parsesParallelTracksIntoOnePlayableTimeline() {
+        val events = SongParser.parse(
+            "#format: 2\n[track main]\nq 1\nw 1\n[track accomp]\na 0.5\ns 0.5\nd 1\n",
+        )
+        assertEquals(listOf("qa", "s", "wd"), events.map { it.keys })
+        assertEquals(listOf(0.5, 0.5, 1.0), events.map { it.beats })
+    }
+
+    @Test
+    fun parsesAll301BundledSongs() {
         val songDir = File("src/main/assets/songs")
         val files = songDir.listFiles { file -> file.extension == "txt" }?.sortedBy { it.name }.orEmpty()
-        assertEquals(294, files.size)
+        assertEquals(301, files.size)
         files.forEach { file ->
             val events = SongParser.parse(file.readText(Charsets.UTF_8))
             assertTrue(events.isNotEmpty(), file.name)

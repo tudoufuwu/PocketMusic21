@@ -2058,7 +2058,56 @@
       "asset": "songs/song_294.txt",
       "beatMs": 500,
       "sha256": "5d26dd61f9769b4c1ad24b358a0ecadd0e8f21c38c70ce33daa2c8e288ac9a35"
+    },
+    {
+      "id": "song_295",
+      "title": "可惜没如果（片段试听）",
+      "asset": "songs/song_295.txt",
+      "beatMs": 750,
+      "sha256": "0747bc5bda29df7499266d544690e67360763882c20e68d2369c47fcb444390a"
+    },
+    {
+      "id": "song_296",
+      "title": "可惜没如果（双轨演示）",
+      "asset": "songs/song_296.txt",
+      "beatMs": 750,
+      "sha256": "778cd19f7df50c3d32d44599c98ff0961d7f187115d0ff6bf357451e701c1a79"
+    },
+    {
+      "id": "song_297",
+      "title": "生日快乐",
+      "asset": "songs/song_297.txt",
+      "beatMs": 600,
+      "sha256": "8caba11aab3efe3181da309ccc2c6f00114c9cd1e6ac5de904fbd2ef355ff57f"
+    },
+    {
+      "id": "song_298",
+      "title": "若梦",
+      "asset": "songs/song_298.txt",
+      "beatMs": 1034,
+      "sha256": "c652ff802239393dab54295b1d8741358121b697ccdfe6c2081ac46d3bf8d574"
+    },
+    {
+      "id": "song_299",
+      "title": "雨爱（新宿对决版）",
+      "asset": "songs/song_299.txt",
+      "beatMs": 418,
+      "sha256": "a77c2c22e4a908f1bcd404efc16abaa78e26d59f2f9920b2d102c68c84710b07"
+    },
+    {
+      "id": "song_300",
+      "title": "永不失联的爱（简谱版）",
+      "asset": "songs/song_300.txt",
+      "beatMs": 706,
+      "sha256": "345dd736d057b551930140115b747346c511d9c547a2f4147440759424a39381"
+    },
+    {
+      "id": "song_301",
+      "title": "永不失联的爱（完整版）",
+      "asset": "songs/song_301.txt",
+      "beatMs": 654,
+      "sha256": "e842e21a8256fadc7ac67c02012b3dd2a5aad575ec5e169958fee8314c101ee0"
     }
   ],
-  "count": 294
+  "count": 301
 }

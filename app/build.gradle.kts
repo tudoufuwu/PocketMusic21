@@ -12,8 +12,8 @@ android {
         applicationId = "com.shadowtrace.pocketmusic21"
         minSdk = 26
         targetSdk = 35
-        versionCode = 51
-        versionName = "0.1.0-mvp-20260826-r2"
+        versionCode = 53
+        versionName = "0.1.0-mvp-20260925"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
