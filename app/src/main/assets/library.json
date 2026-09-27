@@ -2107,7 +2107,42 @@
       "asset": "songs/song_301.txt",
       "beatMs": 654,
       "sha256": "e842e21a8256fadc7ac67c02012b3dd2a5aad575ec5e169958fee8314c101ee0"
+    },
+    {
+      "id": "song_302",
+      "title": "Into the Sky",
+      "asset": "songs/song_302.txt",
+      "beatMs": 696,
+      "sha256": "9fe4853d7422b4e3459f10794571432dba6d125230c23f7bc61349378eaaae8e"
+    },
+    {
+      "id": "song_303",
+      "title": "Mr. Broken Heart",
+      "asset": "songs/song_303.txt",
+      "beatMs": 465,
+      "sha256": "3f20feba9ba051ccd7a56578fa8f67c7116f25c04905caa1837a787617b09513"
+    },
+    {
+      "id": "song_304",
+      "title": "Cage",
+      "asset": "songs/song_304.txt",
+      "beatMs": 723,
+      "sha256": "f5415ab5ede65885a894074629d2f41a2a681b76d61fa129b110fba6e4cbf19d"
+    },
+    {
+      "id": "song_305",
+      "title": "World is Mine",
+      "asset": "songs/song_305.txt",
+      "beatMs": 706,
+      "sha256": "6a8749e9af4c88f093cfe3d7331037dea4fccb4b8f5d6752fe9380689a6c1801"
+    },
+    {
+      "id": "song_306",
+      "title": "闹够了没有",
+      "asset": "songs/song_306.txt",
+      "beatMs": 833,
+      "sha256": "ce0c634b0692ec00a759f70375bca12f576c1ba4f3be37b4084462a651f03934"
     }
   ],
-  "count": 301
+  "count": 306
 }

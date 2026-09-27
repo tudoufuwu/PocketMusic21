@@ -1,5 +1,11 @@
 # GitHub 发布交接（Android）
 
+## 当前发布版本（2026-09-27）
+
+- Android 曲库 306 首，versionCode 54，版本名 `0.1.0-mvp-20260927`。
+- 新增 `song_302`–`song_306`：《Into the Sky》《Mr. Broken Heart》《Cage》《World is Mine》《闹够了没有》；五首均为 candidate / requires_in_game_audition。
+- 更新源统一为 `https://ygqpy.xyz/manifest.json`，历史页为 `https://ygqpy.xyz/`。
+
 ## 当前待发布增量（2026-08-22）
 
 - 曲库已同步至 268 首，新增 song_268《孑遗者的故乡》，推荐 500 ms/拍。
