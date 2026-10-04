@@ -2142,7 +2142,63 @@
       "asset": "songs/song_306.txt",
       "beatMs": 833,
       "sha256": "ce0c634b0692ec00a759f70375bca12f576c1ba4f3be37b4084462a651f03934"
+    },
+    {
+      "id": "song_307",
+      "title": "Fractures",
+      "asset": "songs/song_307.txt",
+      "beatMs": 375,
+      "sha256": "47b9f2e55cc101d1ba85b892f3a55c6e3999692977d94bbace3a4bc94bf23aa6"
+    },
+    {
+      "id": "song_308",
+      "title": "刚刚好",
+      "asset": "songs/song_308.txt",
+      "beatMs": 1071,
+      "sha256": "dbf676d08bbcfb11467f269c58b9671ede11ac90786398f83a46ffba94811022"
+    },
+    {
+      "id": "song_309",
+      "title": "暧昧",
+      "asset": "songs/song_309.txt",
+      "beatMs": 1200,
+      "sha256": "2ac81ea4a57644d8e2ce46fc108e6fa60e074e0d5b4a9f817dbedd4ba4d3d159"
+    },
+    {
+      "id": "song_310",
+      "title": "美人鱼",
+      "asset": "songs/song_310.txt",
+      "beatMs": 625,
+      "sha256": "80bbc23a32097873c7fb57819edaabc0deba004d002a88d756091249c422eff5"
+    },
+    {
+      "id": "song_311",
+      "title": "不遗憾",
+      "asset": "songs/song_311.txt",
+      "beatMs": 909,
+      "sha256": "a550196198e647b7038de86d706198ea3fe9d149c6ccc555428375e4d1091625"
+    },
+    {
+      "id": "song_312",
+      "title": "恋人",
+      "asset": "songs/song_312.txt",
+      "beatMs": 857,
+      "sha256": "a435f15676e40dd5f866848bfbe74e9ec9733f923c4187bfae65c0750230554a"
+    },
+    {
+      "id": "song_313",
+      "title": "模特",
+      "asset": "songs/song_313.txt",
+      "beatMs": 923,
+      "sha256": "33dcb35fb912f576f466f1268cd4ed446bde5a3973c4727fe894f4db65701b67"
+    },
+    {
+      "id": "song_314",
+      "title": "月声尽，心灯明",
+      "asset": "songs/song_314.txt",
+      "beatMs": 417,
+      "sha256": "90c94429d0b17f4a29aae461184a8ab9c26172485cc5bbee94cde65bf88d624a"
     }
   ],
-  "count": 306
+  "count": 314
 }

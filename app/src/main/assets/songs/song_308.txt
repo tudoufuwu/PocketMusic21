@@ -1,0 +1,1110 @@
+# 推荐一拍：1071 ms/拍；candidate / requires_in_game_audition
+# 刚刚好：局部八度简化候选
+# 授权衍生候选；不是无损转写，不代表原唱逐音验证，不改变原始精确事件。
+# 全曲统一移调 -12 半音；仅对越界音局部修正 ±12；节奏与原 merged_attacks 完全一致。
+# 试听参数：BPM=56；每拍=1071.428571 ms；总拍数=231；总时长=247.500000 秒。
+# 每行前注释保留 merged event 的 source ID/occurrence；原始主线和被删装饰信息不在此文件重写。
+# merged_event=1 source=m1.e1@1 source_midi=74 uniform=62 local=0 final=62 onset=0
+s 0.25
+# merged_event=2 source=m1.e2@1 source_midi=76 uniform=64 local=0 final=64 onset=0.25
+d 0.25
+# merged_event=3 source=m1.e3@1 source_midi=81 uniform=69 local=0 final=69 onset=0.5
+h 0.25
+# merged_event=4 source=m1.e4@1 source_midi=76 uniform=64 local=0 final=64 onset=0.75
+d 0.25
+# merged_event=5 source=m1.e5@1 source_midi=74 uniform=62 local=0 final=62 onset=1
+s 0.25
+# merged_event=6 source=m1.e6@1 source_midi=76 uniform=64 local=0 final=64 onset=1.25
+d 0.25
+# merged_event=7 source=m1.e7@1 source_midi=81 uniform=69 local=0 final=69 onset=1.5
+h 0.25
+# merged_event=8 source=m1.e8@1 source_midi=76 uniform=64 local=0 final=64 onset=1.75
+d 0.25
+# merged_event=9 source=m1.e9@1 source_midi=74 uniform=62 local=0 final=62 onset=2
+s 0.25
+# merged_event=10 source=m1.e10@1 source_midi=76 uniform=64 local=0 final=64 onset=2.25
+d 0.25
+# merged_event=11 source=m1.e11@1 source_midi=81 uniform=69 local=0 final=69 onset=2.5
+h 0.25
+# merged_event=12 source=m1.e12@1 source_midi=76 uniform=64 local=0 final=64 onset=2.75
+d 0.25
+# merged_event=13 source=m1.e13@1 source_midi=74 uniform=62 local=0 final=62 onset=3
+s 0.25
+# merged_event=14 source=m1.e14@1 source_midi=76 uniform=64 local=0 final=64 onset=3.25
+d 0.25
+# merged_event=15 source=m1.e15@1 source_midi=81 uniform=69 local=0 final=69 onset=3.5
+h 0.25
+# merged_event=16 source=m1.e16@1 source_midi=76 uniform=64 local=0 final=64 onset=3.75
+d 0.25
+# merged_event=17 source=m2.e1@1 source_midi=74 uniform=62 local=0 final=62 onset=4
+s 0.25
+# merged_event=18 source=m2.e2@1 source_midi=76 uniform=64 local=0 final=64 onset=4.25
+d 0.25
+# merged_event=19 source=m2.e3@1 source_midi=67 uniform=55 local=0 final=55 onset=4.5
+b 0.25
+# merged_event=20 source=m2.e4@1 source_midi=76 uniform=64 local=0 final=64 onset=4.75
+d 0.25
+# merged_event=21 source=m2.e5@1 source_midi=74 uniform=62 local=0 final=62 onset=5
+s 0.25
+# merged_event=22 source=m2.e6@1 source_midi=76 uniform=64 local=0 final=64 onset=5.25
+d 0.25
+# merged_event=23 source=m2.e7@1 source_midi=67 uniform=55 local=0 final=55 onset=5.5
+b 0.25
+# merged_event=24 source=m2.e8@1 source_midi=76 uniform=64 local=0 final=64 onset=5.75
+d 0.25
+# merged_event=25 source=m2.e9@1 source_midi=74 uniform=62 local=0 final=62 onset=6
+s 0.25
+# merged_event=26 source=m2.e10@1 source_midi=76 uniform=64 local=0 final=64 onset=6.25
+d 0.25
+# merged_event=27 source=m2.e11@1 source_midi=67 uniform=55 local=0 final=55 onset=6.5
+b 0.25
+# merged_event=28 source=m2.e12@1 source_midi=76 uniform=64 local=0 final=64 onset=6.75
+d 0.25
+# merged_event=29 source=m2.e13@1 source_midi=74 uniform=62 local=0 final=62 onset=7
+s 0.25
+# merged_event=30 source=m2.e14@1 source_midi=76 uniform=64 local=0 final=64 onset=7.25
+d 0.25
+# merged_event=31 source=m2.e15@1 source_midi=67 uniform=55 local=0 final=55 onset=7.5
+b 0.25
+# merged_event=32 source=m2.e16@1 source_midi=76 uniform=64 local=0 final=64 onset=7.75
+d 0.25
+# merged_event=33 source=m3.e1@1 source_midi=74 uniform=62 local=0 final=62 onset=8
+s 0.25
+# merged_event=34 source=m3.e2@1 source_midi=76 uniform=64 local=0 final=64 onset=8.25
+d 0.25
+# merged_event=35 source=m3.e3@1 source_midi=81 uniform=69 local=0 final=69 onset=8.5
+h 0.25
+# merged_event=36 source=m3.e4@1 source_midi=76 uniform=64 local=0 final=64 onset=8.75
+d 0.25
+# merged_event=37 source=m3.e5@1 source_midi=74 uniform=62 local=0 final=62 onset=9
+s 0.25
+# merged_event=38 source=m3.e6@1 source_midi=76 uniform=64 local=0 final=64 onset=9.25
+d 0.25
+# merged_event=39 source=m3.e7@1 source_midi=81 uniform=69 local=0 final=69 onset=9.5
+h 0.25
+# merged_event=40 source=m3.e8@1 source_midi=76 uniform=64 local=0 final=64 onset=9.75
+d 0.25
+# merged_event=41 source=m3.e9@1 source_midi=74 uniform=62 local=0 final=62 onset=10
+s 0.25
+# merged_event=42 source=m3.e10@1 source_midi=76 uniform=64 local=0 final=64 onset=10.25
+d 0.25
+# merged_event=43 source=m3.e11@1 source_midi=81 uniform=69 local=0 final=69 onset=10.5
+h 0.25
+# merged_event=44 source=m3.e12@1 source_midi=76 uniform=64 local=0 final=64 onset=10.75
+d 0.25
+# merged_event=45 source=m3.e13@1 source_midi=74 uniform=62 local=0 final=62 onset=11
+s 0.25
+# merged_event=46 source=m3.e14@1 source_midi=76 uniform=64 local=0 final=64 onset=11.25
+d 0.25
+# merged_event=47 source=m3.e15@1 source_midi=81 uniform=69 local=0 final=69 onset=11.5
+h 0.25
+# merged_event=48 source=m3.e16@1 source_midi=76 uniform=64 local=0 final=64 onset=11.75
+d 0.25
+# merged_event=49 source=m4.e1@1 source_midi=74 uniform=62 local=0 final=62 onset=12
+s 0.25
+# merged_event=50 source=m4.e2@1 source_midi=76 uniform=64 local=0 final=64 onset=12.25
+d 0.25
+# merged_event=51 source=m4.e3@1 source_midi=67 uniform=55 local=0 final=55 onset=12.5
+b 0.25
+# merged_event=52 source=m4.e4@1 source_midi=76 uniform=64 local=0 final=64 onset=12.75
+d 0.25
+# merged_event=53 source=m4.e5@1 source_midi=74 uniform=62 local=0 final=62 onset=13
+s 0.25
+# merged_event=54 source=m4.e6@1 source_midi=76 uniform=64 local=0 final=64 onset=13.25
+d 0.25
+# merged_event=55 source=m4.e7@1 source_midi=67 uniform=55 local=0 final=55 onset=13.5
+b 0.25
+# merged_event=56 source=m4.e8@1 source_midi=76 uniform=64 local=0 final=64 onset=13.75
+d 0.25
+# merged_event=57 source=m4.e9@1 source_midi=74 uniform=62 local=0 final=62 onset=14
+s 2
+# merged_event=58 source=m5.e1@1 source_midi=76 uniform=64 local=0 final=64 onset=16
+d 0.25
+# merged_event=59 source=m5.e2@1 source_midi=74 uniform=62 local=0 final=62 onset=16.25
+s 0.25
+# merged_event=60 source=m5.e3@1 source_midi=72 uniform=60 local=0 final=60 onset=16.5
+a 0.25
+# merged_event=61 source=m5.e4@1 source_midi=71 uniform=59 local=0 final=59 onset=16.75
+m 0.25
+# merged_event=62 source=m6.e1@1 source_midi=69 uniform=57 local=0 final=57 onset=17
+n 0.25
+# merged_event=63 source=m6.e2@1 source_midi=64 uniform=52 local=0 final=52 onset=17.25
+c 0.25
+# merged_event=64 source=m6.e3@1 source_midi=69 uniform=57 local=0 final=57 onset=17.5
+n 0.25
+# merged_event=65 source=m6.e4@1,m6.e5@1 source_midi=76 uniform=64 local=0 final=64 onset=17.75
+d 0.5
+# merged_event=66 source=m6.e6@1 source_midi=64 uniform=52 local=0 final=52 onset=18.25
+c 0.25
+# merged_event=67 source=m6.e7@1 source_midi=69 uniform=57 local=0 final=57 onset=18.5
+n 0.25
+# merged_event=68 source=m6.e8@1 source_midi=76 uniform=64 local=0 final=64 onset=18.75
+d 0.25
+# merged_event=69 source=m6.e9@1 source_midi=74 uniform=62 local=0 final=62 onset=19
+s 1
+# merged_event=70 source=m6.e10@1 source_midi=74 uniform=62 local=0 final=62 onset=20
+s 0.25
+# merged_event=71 source=m6.e11@1 source_midi=72 uniform=60 local=0 final=60 onset=20.25
+a 0.25
+# merged_event=72 source=m6.e12@1 source_midi=71 uniform=59 local=0 final=59 onset=20.5
+m 0.25
+# merged_event=73 source=m6.e13@1 source_midi=69 uniform=57 local=0 final=57 onset=20.75
+n 0.25
+# merged_event=74 source=m7.e1@1 source_midi=67 uniform=55 local=0 final=55 onset=21
+b 0.25
+# merged_event=75 source=m7.e2@1 source_midi=62 uniform=50 local=0 final=50 onset=21.25
+x 0.25
+# merged_event=76 source=m7.e3@1 source_midi=67 uniform=55 local=0 final=55 onset=21.5
+b 0.25
+# merged_event=77 source=m7.e4@1,m7.e5@1 source_midi=74 uniform=62 local=0 final=62 onset=21.75
+s 0.5
+# merged_event=78 source=m7.e6@1 source_midi=67 uniform=55 local=0 final=55 onset=22.25
+b 0.25
+# merged_event=79 source=m7.e7@1 source_midi=62 uniform=50 local=0 final=50 onset=22.5
+x 0.25
+# merged_event=80 source=m7.e8@1,m7.e9@1 source_midi=74 uniform=62 local=0 final=62 onset=22.75
+s 0.75
+# merged_event=81 source=m7.e10@1 source_midi=72 uniform=60 local=0 final=60 onset=23.5
+a 0.5
+# merged_event=82 source=m7.e11@1 source_midi=71 uniform=59 local=0 final=59 onset=24
+m 0.5
+# merged_event=83 source=m7.e12@1 source_midi=67 uniform=55 local=0 final=55 onset=24.5
+b 0.5
+# merged_event=84 source=m8.e1@1 source_midi=69 uniform=57 local=0 final=57 onset=25
+n 0.75
+# merged_event=85 source=m8.e2@1,m8.e3@1 source_midi=67 uniform=55 local=0 final=55 onset=25.75
+b 0.75
+# merged_event=86 source=m8.e4@1,m8.e5@1 source_midi=65 uniform=53 local=0 final=53 onset=26.5
+v 1.5
+# merged_event=87 source=m8.e6@1 source_midi=72 uniform=60 local=0 final=60 onset=28
+a 1
+# merged_event=88 source=m9.e1@1 source_midi=69 uniform=57 local=0 final=57 onset=29
+n 2
+# merged_event=89 source=m9.e2@1 source_midi=67 uniform=55 local=0 final=55 onset=31
+b 1.5
+# merged_event=90 source=m9.e3@1 source_midi=60 uniform=48 local=0 final=48 onset=32.5
+z 0.25
+# merged_event=91 source=m9.e4@1 source_midi=62 uniform=50 local=0 final=50 onset=32.75
+x 0.25
+# merged_event=92 source=m10.e1@1 source_midi=64 uniform=52 local=0 final=52 onset=33
+c 0.25
+# merged_event=93 source=m10.e2@1 source_midi=62 uniform=50 local=0 final=50 onset=33.25
+x 0.25
+# merged_event=94 source=m10.e3@1 source_midi=64 uniform=52 local=0 final=52 onset=33.5
+c 0.25
+# merged_event=95 source=m10.e4@1,m10.e5@1 source_midi=67 uniform=55 local=0 final=55 onset=33.75
+b 0.5
+# merged_event=96 source=m10.e6@1 source_midi=64 uniform=52 local=0 final=52 onset=34.25
+c 0.5
+# merged_event=97 source=m10.e7@1 source_midi=64 uniform=52 local=0 final=52 onset=34.75
+c 0.25
+# merged_event=98 source=m10.e8@1 source_midi=64 uniform=52 local=0 final=52 onset=35
+c 0.25
+# merged_event=99 source=m10.e9@1 source_midi=62 uniform=50 local=0 final=50 onset=35.25
+x 0.25
+# merged_event=100 source=m10.e10@1 source_midi=64 uniform=52 local=0 final=52 onset=35.5
+c 0.25
+# merged_event=101 source=m10.e11@1,m10.e12@1 source_midi=67 uniform=55 local=0 final=55 onset=35.75
+b 0.5
+# merged_event=102 source=m10.e13@1 source_midi=64 uniform=52 local=0 final=52 onset=36.25
+c 0.5
+# merged_event=103 source=m10.e14@1 source_midi=64 uniform=52 local=0 final=52 onset=36.75
+c 0.25
+# merged_event=104 source=m11.e1@1 source_midi=64 uniform=52 local=0 final=52 onset=37
+c 0.25
+# merged_event=105 source=m11.e2@1 source_midi=62 uniform=50 local=0 final=50 onset=37.25
+x 0.25
+# merged_event=106 source=m11.e3@1 source_midi=64 uniform=52 local=0 final=52 onset=37.5
+c 0.25
+# merged_event=107 source=m11.e4@1,m11.e5@1 source_midi=67 uniform=55 local=0 final=55 onset=37.75
+b 0.5
+# merged_event=108 source=m11.e6@1 source_midi=64 uniform=52 local=0 final=52 onset=38.25
+c 0.5
+# merged_event=109 source=m11.e7@1,m11.e8@1 source_midi=57 uniform=45 local=12 final=57 onset=38.75
+n 1.25
+# merged_event=110 source=m11.e9@1 source_midi=69 uniform=57 local=0 final=57 onset=40
+n 0.5
+# merged_event=111 source=m11.e10@1 source_midi=60 uniform=48 local=0 final=48 onset=40.5
+z 0.25
+# merged_event=112 source=m11.e11@1 source_midi=62 uniform=50 local=0 final=50 onset=40.75
+x 0.25
+# merged_event=113 source=m12.e1@1 source_midi=64 uniform=52 local=0 final=52 onset=41
+c 0.25
+# merged_event=114 source=m12.e2@1 source_midi=62 uniform=50 local=0 final=50 onset=41.25
+x 0.25
+# merged_event=115 source=m12.e3@1 source_midi=64 uniform=52 local=0 final=52 onset=41.5
+c 0.25
+# merged_event=116 source=m12.e4@1,m12.e5@1 source_midi=67 uniform=55 local=0 final=55 onset=41.75
+b 0.5
+# merged_event=117 source=m12.e6@1 source_midi=64 uniform=52 local=0 final=52 onset=42.25
+c 0.5
+# merged_event=118 source=m12.e7@1 source_midi=64 uniform=52 local=0 final=52 onset=42.75
+c 0.25
+# merged_event=119 source=m12.e8@1 source_midi=64 uniform=52 local=0 final=52 onset=43
+c 0.25
+# merged_event=120 source=m12.e9@1 source_midi=62 uniform=50 local=0 final=50 onset=43.25
+x 0.25
+# merged_event=121 source=m12.e10@1 source_midi=64 uniform=52 local=0 final=52 onset=43.5
+c 0.25
+# merged_event=122 source=m12.e11@1,m12.e12@1 source_midi=71 uniform=59 local=0 final=59 onset=43.75
+m 0.5
+# merged_event=123 source=m12.e13@1 source_midi=67 uniform=55 local=0 final=55 onset=44.25
+b 0.5
+# merged_event=124 source=m12.e14@1 source_midi=64 uniform=52 local=0 final=52 onset=44.75
+c 0.25
+# merged_event=125 source=m13.e1@1 source_midi=64 uniform=52 local=0 final=52 onset=45
+c 0.25
+# merged_event=126 source=m13.e2@1 source_midi=62 uniform=50 local=0 final=50 onset=45.25
+x 0.25
+# merged_event=127 source=m13.e3@1 source_midi=64 uniform=52 local=0 final=52 onset=45.5
+c 0.25
+# merged_event=128 source=m13.e4@1,m13.e5@1 source_midi=67 uniform=55 local=0 final=55 onset=45.75
+b 0.5
+# merged_event=129 source=m13.e6@1 source_midi=65 uniform=53 local=0 final=53 onset=46.25
+v 0.5
+# merged_event=130 source=m13.e7@1,m13.e8@1 source_midi=57 uniform=45 local=12 final=57 onset=46.75
+n 1.25
+# merged_event=131 source=m13.e9@1 source_midi=None uniform=None local=0 final=None onset=48
+p 0.25
+# merged_event=132 source=m13.e10@1 source_midi=72 uniform=60 local=0 final=60 onset=48.25
+a 0.25
+# merged_event=133 source=m13.e11@1 source_midi=72 uniform=60 local=0 final=60 onset=48.5
+a 0.25
+# merged_event=134 source=m13.e12@1 source_midi=71 uniform=59 local=0 final=59 onset=48.75
+m 0.25
+# merged_event=135 source=m14.e1@1 source_midi=69 uniform=57 local=0 final=57 onset=49
+n 0.5
+# merged_event=136 source=m14.e2@1 source_midi=76 uniform=64 local=0 final=64 onset=49.5
+d 0.25
+# merged_event=137 source=m14.e3@1,m14.e4@1 source_midi=76 uniform=64 local=0 final=64 onset=49.75
+d 0.5
+# merged_event=138 source=m14.e5@1 source_midi=72 uniform=60 local=0 final=60 onset=50.25
+a 0.5
+# merged_event=139 source=m14.e6@1,m14.e7@1 source_midi=74 uniform=62 local=0 final=62 onset=50.75
+s 1.25
+# merged_event=140 source=m14.e8@1 source_midi=74 uniform=62 local=0 final=62 onset=52
+s 0.25
+# merged_event=141 source=m14.e9@1 source_midi=72 uniform=60 local=0 final=60 onset=52.25
+a 0.25
+# merged_event=142 source=m14.e10@1 source_midi=71 uniform=59 local=0 final=59 onset=52.5
+m 0.25
+# merged_event=143 source=m14.e11@1 source_midi=74 uniform=62 local=0 final=62 onset=52.75
+s 0.25
+# merged_event=144 source=m15.e1@1 source_midi=64 uniform=52 local=0 final=52 onset=53
+c 0.5
+# merged_event=145 source=m15.e2@1 source_midi=74 uniform=62 local=0 final=62 onset=53.5
+s 0.25
+# merged_event=146 source=m15.e3@1,m15.e4@1 source_midi=74 uniform=62 local=0 final=62 onset=53.75
+s 0.5
+# merged_event=147 source=m15.e5@1 source_midi=71 uniform=59 local=0 final=59 onset=54.25
+m 0.25
+# merged_event=148 source=m15.e6@1 source_midi=71 uniform=59 local=0 final=59 onset=54.5
+m 0.25
+# merged_event=149 source=m15.e7@1,m15.e8@1,m15.e9@1 source_midi=72 uniform=60 local=0 final=60 onset=54.75
+a 2
+# merged_event=150 source=m15.e10@1 source_midi=64 uniform=52 local=0 final=52 onset=56.75
+c 0.25
+# merged_event=151 source=m16.e1@1 source_midi=65 uniform=53 local=0 final=53 onset=57
+v 0.5
+# merged_event=152 source=m16.e2@1 source_midi=64 uniform=52 local=0 final=52 onset=57.5
+c 0.25
+# merged_event=153 source=m16.e3@1,m16.e4@1 source_midi=65 uniform=53 local=0 final=53 onset=57.75
+v 0.5
+# merged_event=154 source=m16.e5@1 source_midi=69 uniform=57 local=0 final=57 onset=58.25
+n 0.5
+# merged_event=155 source=m16.e6@1,m16.e7@1,m16.e8@1 source_midi=67 uniform=55 local=0 final=55 onset=58.75
+b 2
+# merged_event=156 source=m16.e9@1 source_midi=64 uniform=52 local=0 final=52 onset=60.75
+c 0.25
+# merged_event=157 source=m17.e1@1 source_midi=65 uniform=53 local=0 final=53 onset=61
+v 0.5
+# merged_event=158 source=m17.e2@1 source_midi=64 uniform=52 local=0 final=52 onset=61.5
+c 0.25
+# merged_event=159 source=m17.e3@1,m17.e4@1 source_midi=65 uniform=53 local=0 final=53 onset=61.75
+v 0.5
+# merged_event=160 source=m17.e5@1 source_midi=69 uniform=57 local=0 final=57 onset=62.25
+n 0.5
+# merged_event=161 source=m17.e6@1,m17.e7@1 source_midi=71 uniform=59 local=0 final=59 onset=62.75
+m 1.25
+# merged_event=162 source=m17.e8@1 source_midi=72 uniform=60 local=0 final=60 onset=64
+a 1
+# merged_event=163 source=m18.e1@1 source_midi=74 uniform=62 local=0 final=62 onset=65
+s 3
+# merged_event=164 source=m18.e2@1 source_midi=76 uniform=64 local=0 final=64 onset=68
+d 0.25
+# merged_event=165 source=m18.e3@1 source_midi=74 uniform=62 local=0 final=62 onset=68.25
+s 0.25
+# merged_event=166 source=m18.e4@1 source_midi=72 uniform=60 local=0 final=60 onset=68.5
+a 0.25
+# merged_event=167 source=m18.e5@1 source_midi=71 uniform=59 local=0 final=59 onset=68.75
+m 0.25
+# merged_event=168 source=m19.e1@1 source_midi=69 uniform=57 local=0 final=57 onset=69
+n 0.5
+# merged_event=169 source=m19.e2@1 source_midi=65 uniform=53 local=0 final=53 onset=69.5
+v 0.25
+# merged_event=170 source=m19.e3@1,m19.e4@1 source_midi=69 uniform=57 local=0 final=57 onset=69.75
+n 0.5
+# merged_event=171 source=m19.e5@1 source_midi=76 uniform=64 local=0 final=64 onset=70.25
+d 0.5
+# merged_event=172 source=m19.e6@1,m19.e7@1 source_midi=76 uniform=64 local=0 final=64 onset=70.75
+d 0.5
+# merged_event=173 source=m19.e8@1 source_midi=74 uniform=62 local=0 final=62 onset=71.25
+s 0.5
+# merged_event=174 source=m19.e9@1 source_midi=74 uniform=62 local=0 final=62 onset=71.75
+s 0.25
+# merged_event=175 source=m19.e10@1 source_midi=74 uniform=62 local=0 final=62 onset=72
+s 0.25
+# merged_event=176 source=m19.e11@1 source_midi=72 uniform=60 local=0 final=60 onset=72.25
+a 0.25
+# merged_event=177 source=m19.e12@1 source_midi=71 uniform=59 local=0 final=59 onset=72.5
+m 0.25
+# merged_event=178 source=m19.e13@1,m20.e1@1 source_midi=69 uniform=57 local=0 final=57 onset=72.75
+n 0.5
+# merged_event=179 source=m20.e2@1 source_midi=67 uniform=55 local=0 final=55 onset=73.25
+b 0.75
+# merged_event=180 source=m20.e3@1 source_midi=67 uniform=55 local=0 final=55 onset=74
+b 0.5
+# merged_event=181 source=m20.e4@1 source_midi=76 uniform=64 local=0 final=64 onset=74.5
+d 0.25
+# merged_event=182 source=m20.e5@1,m20.e6@1 source_midi=74 uniform=62 local=0 final=62 onset=74.75
+s 0.5
+# merged_event=183 source=m20.e7@1,m20.e8@1 source_midi=72 uniform=60 local=0 final=60 onset=75.25
+a 1.5
+# merged_event=184 source=m20.e9@1 source_midi=72 uniform=60 local=0 final=60 onset=76.75
+a 0.25
+# merged_event=185 source=m21.e1@1 source_midi=72 uniform=60 local=0 final=60 onset=77
+a 0.5
+# merged_event=186 source=m21.e2@1 source_midi=71 uniform=59 local=0 final=59 onset=77.5
+m 0.25
+# merged_event=187 source=m21.e3@1,m21.e4@1 source_midi=72 uniform=60 local=0 final=60 onset=77.75
+a 0.5
+# merged_event=188 source=m21.e5@1 source_midi=65 uniform=53 local=0 final=53 onset=78.25
+v 0.5
+# merged_event=189 source=m21.e6@1 source_midi=72 uniform=60 local=0 final=60 onset=78.75
+a 0.25
+# merged_event=190 source=m21.e7@1 source_midi=71 uniform=59 local=0 final=59 onset=79
+m 0.5
+# merged_event=191 source=m21.e8@1,m21.e9@1 source_midi=69 uniform=57 local=0 final=57 onset=79.5
+n 0.75
+# merged_event=192 source=m21.e10@1 source_midi=67 uniform=55 local=0 final=55 onset=80.25
+b 0.5
+# merged_event=193 source=m21.e11@1,m22.e1@1 source_midi=64 uniform=52 local=0 final=52 onset=80.75
+c 0.75
+# merged_event=194 source=m22.e2@1 source_midi=64 uniform=52 local=0 final=52 onset=81.5
+c 0.25
+# merged_event=195 source=m22.e3@1 source_midi=67 uniform=55 local=0 final=55 onset=81.75
+b 0.25
+# merged_event=196 source=m22.e4@1 source_midi=65 uniform=53 local=0 final=53 onset=82
+v 0.25
+# merged_event=197 source=m22.e5@1 source_midi=57 uniform=45 local=12 final=57 onset=82.25
+n 0.25
+# merged_event=198 source=m22.e6@1 source_midi=60 uniform=48 local=0 final=48 onset=82.5
+z 0.25
+# merged_event=199 source=m22.e7@1 source_midi=65 uniform=53 local=0 final=53 onset=82.75
+v 0.25
+# merged_event=200 source=m22.e8@1 source_midi=67 uniform=55 local=0 final=55 onset=83
+b 0.5
+# merged_event=201 source=m22.e9@1 source_midi=62 uniform=50 local=0 final=50 onset=83.5
+x 0.25
+# merged_event=202 source=m22.e10@1 source_midi=67 uniform=55 local=0 final=55 onset=83.75
+b 0.25
+# merged_event=203 source=m22.e11@1 source_midi=76 uniform=64 local=0 final=64 onset=84
+d 0.25
+# merged_event=204 source=m22.e12@1 source_midi=74 uniform=62 local=0 final=62 onset=84.25
+s 0.25
+# merged_event=205 source=m22.e13@1 source_midi=72 uniform=60 local=0 final=60 onset=84.5
+a 0.25
+# merged_event=206 source=m22.e14@1 source_midi=71 uniform=59 local=0 final=59 onset=84.75
+m 0.25
+# merged_event=207 source=m23.e1@1 source_midi=69 uniform=57 local=0 final=57 onset=85
+n 0.5
+# merged_event=208 source=m23.e2@1 source_midi=65 uniform=53 local=0 final=53 onset=85.5
+v 0.25
+# merged_event=209 source=m23.e3@1,m23.e4@1 source_midi=69 uniform=57 local=0 final=57 onset=85.75
+n 0.5
+# merged_event=210 source=m23.e5@1 source_midi=76 uniform=64 local=0 final=64 onset=86.25
+d 0.5
+# merged_event=211 source=m23.e6@1,m23.e7@1 source_midi=76 uniform=64 local=0 final=64 onset=86.75
+d 0.5
+# merged_event=212 source=m23.e8@1 source_midi=74 uniform=62 local=0 final=62 onset=87.25
+s 0.5
+# merged_event=213 source=m23.e9@1 source_midi=74 uniform=62 local=0 final=62 onset=87.75
+s 0.25
+# merged_event=214 source=m23.e10@1 source_midi=74 uniform=62 local=0 final=62 onset=88
+s 0.25
+# merged_event=215 source=m23.e11@1 source_midi=72 uniform=60 local=0 final=60 onset=88.25
+a 0.25
+# merged_event=216 source=m23.e12@1 source_midi=71 uniform=59 local=0 final=59 onset=88.5
+m 0.25
+# merged_event=217 source=m23.e13@1,m24.e1@1 source_midi=69 uniform=57 local=0 final=57 onset=88.75
+n 0.5
+# merged_event=218 source=m24.e2@1 source_midi=67 uniform=55 local=0 final=55 onset=89.25
+b 0.5
+# merged_event=219 source=m24.e3@1 source_midi=67 uniform=55 local=0 final=55 onset=89.75
+b 0.25
+# merged_event=220 source=m24.e4@1 source_midi=67 uniform=55 local=0 final=55 onset=90
+b 0.5
+# merged_event=221 source=m24.e5@1 source_midi=76 uniform=64 local=0 final=64 onset=90.5
+d 0.25
+# merged_event=222 source=m24.e6@1,m24.e7@1 source_midi=74 uniform=62 local=0 final=62 onset=90.75
+s 0.5
+# merged_event=223 source=m24.e8@1,m24.e9@1 source_midi=72 uniform=60 local=0 final=60 onset=91.25
+a 1.5
+# merged_event=224 source=m24.e10@1 source_midi=64 uniform=52 local=0 final=52 onset=92.75
+c 0.25
+# merged_event=225 source=m25.e1@1 source_midi=65 uniform=53 local=0 final=53 onset=93
+v 0.5
+# merged_event=226 source=m25.e2@1 source_midi=64 uniform=52 local=0 final=52 onset=93.5
+c 0.25
+# merged_event=227 source=m25.e3@1,m25.e4@1 source_midi=65 uniform=53 local=0 final=53 onset=93.75
+v 0.75
+# merged_event=228 source=m25.e5@1 source_midi=64 uniform=52 local=0 final=52 onset=94.5
+c 0.25
+# merged_event=229 source=m25.e6@1,m25.e7@1 source_midi=62 uniform=50 local=0 final=50 onset=94.75
+x 0.75
+# merged_event=230 source=m25.e8@1 source_midi=64 uniform=52 local=0 final=52 onset=95.5
+c 0.25
+# merged_event=231 source=m25.e9@1,m25.e10@1 source_midi=62 uniform=50 local=0 final=50 onset=95.75
+x 0.75
+# merged_event=232 source=m25.e11@1 source_midi=60 uniform=48 local=0 final=48 onset=96.5
+z 0.25
+# merged_event=233 source=m25.e12@1 source_midi=60 uniform=48 local=0 final=48 onset=96.75
+z 0.25
+# merged_event=234 source=m26.e1@1 source_midi=64 uniform=52 local=0 final=52 onset=97
+c 0.25
+# merged_event=235 source=m26.e2@1 source_midi=55 uniform=43 local=12 final=55 onset=97.25
+b 0.25
+# merged_event=236 source=m26.e3@1 source_midi=64 uniform=52 local=0 final=52 onset=97.5
+c 0.5
+# merged_event=237 source=m26.e4@1 source_midi=65 uniform=53 local=0 final=53 onset=98
+v 0.5
+# merged_event=238 source=m26.e5@1 source_midi=62 uniform=50 local=0 final=50 onset=98.5
+x 0.5
+# merged_event=239 source=m26.e6@1 source_midi=64 uniform=52 local=0 final=52 onset=99
+c 2
+# merged_event=240 source=m27.e1@1 source_midi=62 uniform=50 local=0 final=50 onset=101
+x 0.25
+# merged_event=241 source=m27.e2@1 source_midi=64 uniform=52 local=0 final=52 onset=101.25
+c 0.25
+# merged_event=242 source=m27.e3@1 source_midi=57 uniform=45 local=12 final=57 onset=101.5
+n 0.25
+# merged_event=243 source=m27.e4@1 source_midi=64 uniform=52 local=0 final=52 onset=101.75
+c 0.25
+# merged_event=244 source=m27.e5@1 source_midi=62 uniform=50 local=0 final=50 onset=102
+x 0.25
+# merged_event=245 source=m27.e6@1 source_midi=64 uniform=52 local=0 final=52 onset=102.25
+c 0.25
+# merged_event=246 source=m27.e7@1 source_midi=57 uniform=45 local=12 final=57 onset=102.5
+n 0.25
+# merged_event=247 source=m27.e8@1 source_midi=64 uniform=52 local=0 final=52 onset=102.75
+c 0.25
+# merged_event=248 source=m27.e9@1 source_midi=62 uniform=50 local=0 final=50 onset=103
+x 0.25
+# merged_event=249 source=m27.e10@1 source_midi=64 uniform=52 local=0 final=52 onset=103.25
+c 0.25
+# merged_event=250 source=m27.e11@1 source_midi=57 uniform=45 local=12 final=57 onset=103.5
+n 0.25
+# merged_event=251 source=m27.e12@1 source_midi=64 uniform=52 local=0 final=52 onset=103.75
+c 0.25
+# merged_event=252 source=m27.e13@1 source_midi=62 uniform=50 local=0 final=50 onset=104
+x 0.25
+# merged_event=253 source=m27.e14@1 source_midi=64 uniform=52 local=0 final=52 onset=104.25
+c 0.25
+# merged_event=254 source=m27.e15@1 source_midi=57 uniform=45 local=12 final=57 onset=104.5
+n 0.25
+# merged_event=255 source=m27.e16@1 source_midi=64 uniform=52 local=0 final=52 onset=104.75
+c 0.25
+# merged_event=256 source=m28.e1@1 source_midi=62 uniform=50 local=0 final=50 onset=105
+x 0.25
+# merged_event=257 source=m28.e2@1 source_midi=64 uniform=52 local=0 final=52 onset=105.25
+c 0.25
+# merged_event=258 source=m28.e3@1 source_midi=57 uniform=45 local=12 final=57 onset=105.5
+n 0.25
+# merged_event=259 source=m28.e4@1 source_midi=64 uniform=52 local=0 final=52 onset=105.75
+c 0.25
+# merged_event=260 source=m28.e5@1 source_midi=62 uniform=50 local=0 final=50 onset=106
+x 0.25
+# merged_event=261 source=m28.e6@1 source_midi=64 uniform=52 local=0 final=52 onset=106.25
+c 0.25
+# merged_event=262 source=m28.e7@1 source_midi=57 uniform=45 local=12 final=57 onset=106.5
+n 0.25
+# merged_event=263 source=m28.e8@1 source_midi=64 uniform=52 local=0 final=52 onset=106.75
+c 0.25
+# merged_event=264 source=m28.e9@1 source_midi=62 uniform=50 local=0 final=50 onset=107
+x 0.25
+# merged_event=265 source=m28.e10@1 source_midi=64 uniform=52 local=0 final=52 onset=107.25
+c 0.25
+# merged_event=266 source=m28.e11@1 source_midi=57 uniform=45 local=12 final=57 onset=107.5
+n 0.25
+# merged_event=267 source=m28.e12@1 source_midi=64 uniform=52 local=0 final=52 onset=107.75
+c 0.25
+# merged_event=268 source=m28.e13@1 source_midi=None uniform=None local=0 final=None onset=108
+p 0.25
+# merged_event=269 source=m28.e14@1 source_midi=60 uniform=48 local=0 final=48 onset=108.25
+z 0.25
+# merged_event=270 source=m28.e15@1 source_midi=60 uniform=48 local=0 final=48 onset=108.5
+z 0.25
+# merged_event=271 source=m28.e16@1 source_midi=62 uniform=50 local=0 final=50 onset=108.75
+x 0.25
+# merged_event=272 source=m29.e1@1 source_midi=64 uniform=52 local=0 final=52 onset=109
+c 0.25
+# merged_event=273 source=m29.e2@1 source_midi=62 uniform=50 local=0 final=50 onset=109.25
+x 0.25
+# merged_event=274 source=m29.e3@1 source_midi=64 uniform=52 local=0 final=52 onset=109.5
+c 0.25
+# merged_event=275 source=m29.e4@1,m29.e5@1 source_midi=67 uniform=55 local=0 final=55 onset=109.75
+b 0.5
+# merged_event=276 source=m29.e6@1 source_midi=64 uniform=52 local=0 final=52 onset=110.25
+c 0.5
+# merged_event=277 source=m29.e7@1 source_midi=64 uniform=52 local=0 final=52 onset=110.75
+c 0.25
+# merged_event=278 source=m29.e8@1 source_midi=64 uniform=52 local=0 final=52 onset=111
+c 0.25
+# merged_event=279 source=m29.e9@1 source_midi=62 uniform=50 local=0 final=50 onset=111.25
+x 0.25
+# merged_event=280 source=m29.e10@1 source_midi=64 uniform=52 local=0 final=52 onset=111.5
+c 0.25
+# merged_event=281 source=m29.e11@1,m29.e12@1 source_midi=67 uniform=55 local=0 final=55 onset=111.75
+b 0.5
+# merged_event=282 source=m29.e13@1 source_midi=64 uniform=52 local=0 final=52 onset=112.25
+c 0.5
+# merged_event=283 source=m29.e14@1 source_midi=64 uniform=52 local=0 final=52 onset=112.75
+c 0.25
+# merged_event=284 source=m30.e1@1 source_midi=64 uniform=52 local=0 final=52 onset=113
+c 0.25
+# merged_event=285 source=m30.e2@1 source_midi=62 uniform=50 local=0 final=50 onset=113.25
+x 0.25
+# merged_event=286 source=m30.e3@1 source_midi=64 uniform=52 local=0 final=52 onset=113.5
+c 0.25
+# merged_event=287 source=m30.e4@1,m30.e5@1 source_midi=67 uniform=55 local=0 final=55 onset=113.75
+b 0.5
+# merged_event=288 source=m30.e6@1 source_midi=64 uniform=52 local=0 final=52 onset=114.25
+c 0.5
+# merged_event=289 source=m30.e7@1,m30.e8@1 source_midi=57 uniform=45 local=12 final=57 onset=114.75
+n 1.25
+# merged_event=290 source=m30.e9@1 source_midi=64 uniform=52 local=0 final=52 onset=116
+c 0.25
+# merged_event=291 source=m30.e10@1 source_midi=62 uniform=50 local=0 final=50 onset=116.25
+x 0.25
+# merged_event=292 source=m30.e11@1 source_midi=60 uniform=48 local=0 final=48 onset=116.5
+z 0.25
+# merged_event=293 source=m30.e12@1 source_midi=62 uniform=50 local=0 final=50 onset=116.75
+x 0.25
+# merged_event=294 source=m31.e1@1 source_midi=64 uniform=52 local=0 final=52 onset=117
+c 0.25
+# merged_event=295 source=m31.e2@1 source_midi=62 uniform=50 local=0 final=50 onset=117.25
+x 0.25
+# merged_event=296 source=m31.e3@1 source_midi=64 uniform=52 local=0 final=52 onset=117.5
+c 0.25
+# merged_event=297 source=m31.e4@1,m31.e5@1 source_midi=67 uniform=55 local=0 final=55 onset=117.75
+b 0.5
+# merged_event=298 source=m31.e6@1 source_midi=64 uniform=52 local=0 final=52 onset=118.25
+c 0.5
+# merged_event=299 source=m31.e7@1 source_midi=64 uniform=52 local=0 final=52 onset=118.75
+c 0.25
+# merged_event=300 source=m31.e8@1 source_midi=64 uniform=52 local=0 final=52 onset=119
+c 0.25
+# merged_event=301 source=m31.e9@1 source_midi=62 uniform=50 local=0 final=50 onset=119.25
+x 0.25
+# merged_event=302 source=m31.e10@1 source_midi=64 uniform=52 local=0 final=52 onset=119.5
+c 0.25
+# merged_event=303 source=m31.e11@1,m31.e12@1 source_midi=71 uniform=59 local=0 final=59 onset=119.75
+m 0.5
+# merged_event=304 source=m31.e13@1 source_midi=67 uniform=55 local=0 final=55 onset=120.25
+b 0.5
+# merged_event=305 source=m31.e14@1 source_midi=64 uniform=52 local=0 final=52 onset=120.75
+c 0.25
+# merged_event=306 source=m32.e1@1 source_midi=64 uniform=52 local=0 final=52 onset=121
+c 0.25
+# merged_event=307 source=m32.e2@1 source_midi=62 uniform=50 local=0 final=50 onset=121.25
+x 0.25
+# merged_event=308 source=m32.e3@1 source_midi=64 uniform=52 local=0 final=52 onset=121.5
+c 0.25
+# merged_event=309 source=m32.e4@1,m32.e5@1 source_midi=67 uniform=55 local=0 final=55 onset=121.75
+b 0.5
+# merged_event=310 source=m32.e6@1 source_midi=65 uniform=53 local=0 final=53 onset=122.25
+v 0.5
+# merged_event=311 source=m32.e7@1,m32.e8@1 source_midi=57 uniform=45 local=12 final=57 onset=122.75
+n 1.25
+# merged_event=312 source=m32.e9@1 source_midi=None uniform=None local=0 final=None onset=124
+p 0.25
+# merged_event=313 source=m32.e10@1 source_midi=72 uniform=60 local=0 final=60 onset=124.25
+a 0.25
+# merged_event=314 source=m32.e11@1 source_midi=72 uniform=60 local=0 final=60 onset=124.5
+a 0.25
+# merged_event=315 source=m32.e12@1 source_midi=71 uniform=59 local=0 final=59 onset=124.75
+m 0.25
+# merged_event=316 source=m33.e1@1 source_midi=69 uniform=57 local=0 final=57 onset=125
+n 0.5
+# merged_event=317 source=m33.e2@1 source_midi=76 uniform=64 local=0 final=64 onset=125.5
+d 0.25
+# merged_event=318 source=m33.e3@1,m33.e4@1 source_midi=76 uniform=64 local=0 final=64 onset=125.75
+d 0.5
+# merged_event=319 source=m33.e5@1 source_midi=72 uniform=60 local=0 final=60 onset=126.25
+a 0.5
+# merged_event=320 source=m33.e6@1,m33.e7@1 source_midi=74 uniform=62 local=0 final=62 onset=126.75
+s 1.25
+# merged_event=321 source=m33.e8@1 source_midi=74 uniform=62 local=0 final=62 onset=128
+s 0.25
+# merged_event=322 source=m33.e9@1 source_midi=72 uniform=60 local=0 final=60 onset=128.25
+a 0.25
+# merged_event=323 source=m33.e10@1 source_midi=71 uniform=59 local=0 final=59 onset=128.5
+m 0.25
+# merged_event=324 source=m33.e11@1 source_midi=74 uniform=62 local=0 final=62 onset=128.75
+s 0.25
+# merged_event=325 source=m34.e1@1 source_midi=64 uniform=52 local=0 final=52 onset=129
+c 0.5
+# merged_event=326 source=m34.e2@1 source_midi=74 uniform=62 local=0 final=62 onset=129.5
+s 0.25
+# merged_event=327 source=m34.e3@1,m34.e4@1 source_midi=74 uniform=62 local=0 final=62 onset=129.75
+s 0.5
+# merged_event=328 source=m34.e5@1 source_midi=71 uniform=59 local=0 final=59 onset=130.25
+m 0.25
+# merged_event=329 source=m34.e6@1 source_midi=71 uniform=59 local=0 final=59 onset=130.5
+m 0.25
+# merged_event=330 source=m34.e7@1,m34.e8@1,m34.e9@1 source_midi=72 uniform=60 local=0 final=60 onset=130.75
+a 2
+# merged_event=331 source=m34.e10@1 source_midi=64 uniform=52 local=0 final=52 onset=132.75
+c 0.25
+# merged_event=332 source=m35.e1@1 source_midi=65 uniform=53 local=0 final=53 onset=133
+v 0.5
+# merged_event=333 source=m35.e2@1 source_midi=64 uniform=52 local=0 final=52 onset=133.5
+c 0.25
+# merged_event=334 source=m35.e3@1,m35.e4@1 source_midi=65 uniform=53 local=0 final=53 onset=133.75
+v 0.5
+# merged_event=335 source=m35.e5@1 source_midi=64 uniform=52 local=0 final=52 onset=134.25
+c 0.5
+# merged_event=336 source=m35.e6@1,m35.e7@1 source_midi=62 uniform=50 local=0 final=50 onset=134.75
+x 0.75
+# merged_event=337 source=m35.e8@1 source_midi=60 uniform=48 local=0 final=48 onset=135.5
+z 0.25
+# merged_event=338 source=m35.e9@1,m35.e10@1 source_midi=60 uniform=48 local=0 final=48 onset=135.75
+z 0.5
+# merged_event=339 source=m35.e11@1 source_midi=62 uniform=50 local=0 final=50 onset=136.25
+x 0.25
+# merged_event=340 source=m35.e12@1 source_midi=60 uniform=48 local=0 final=48 onset=136.5
+z 0.25
+# merged_event=341 source=m35.e13@1,m36.e1@1 source_midi=60 uniform=48 local=0 final=48 onset=136.75
+z 0.75
+# merged_event=342 source=m36.e2@1 source_midi=64 uniform=52 local=0 final=52 onset=137.5
+c 0.5
+# merged_event=343 source=m36.e3@1 source_midi=64 uniform=52 local=0 final=52 onset=138
+c 0.5
+# merged_event=344 source=m36.e4@1 source_midi=64 uniform=52 local=0 final=52 onset=138.5
+c 0.5
+# merged_event=345 source=m36.e5@1 source_midi=64 uniform=52 local=0 final=52 onset=139
+c 0.5
+# merged_event=346 source=m36.e6@1 source_midi=None uniform=None local=0 final=None onset=139.5
+p 0.5
+# merged_event=347 source=m36.e7@1 source_midi=76 uniform=64 local=0 final=64 onset=140
+d 0.25
+# merged_event=348 source=m36.e8@1 source_midi=74 uniform=62 local=0 final=62 onset=140.25
+s 0.25
+# merged_event=349 source=m36.e9@1 source_midi=72 uniform=60 local=0 final=60 onset=140.5
+a 0.25
+# merged_event=350 source=m36.e10@1 source_midi=71 uniform=59 local=0 final=59 onset=140.75
+m 0.25
+# merged_event=351 source=m37.e1@1 source_midi=69 uniform=57 local=0 final=57 onset=141
+n 0.5
+# merged_event=352 source=m37.e2@1 source_midi=65 uniform=53 local=0 final=53 onset=141.5
+v 0.25
+# merged_event=353 source=m37.e3@1,m37.e4@1 source_midi=69 uniform=57 local=0 final=57 onset=141.75
+n 0.5
+# merged_event=354 source=m37.e5@1 source_midi=76 uniform=64 local=0 final=64 onset=142.25
+d 0.5
+# merged_event=355 source=m37.e6@1,m37.e7@1 source_midi=76 uniform=64 local=0 final=64 onset=142.75
+d 0.5
+# merged_event=356 source=m37.e8@1 source_midi=74 uniform=62 local=0 final=62 onset=143.25
+s 0.5
+# merged_event=357 source=m37.e9@1 source_midi=74 uniform=62 local=0 final=62 onset=143.75
+s 0.25
+# merged_event=358 source=m37.e10@1 source_midi=74 uniform=62 local=0 final=62 onset=144
+s 0.25
+# merged_event=359 source=m37.e11@1 source_midi=72 uniform=60 local=0 final=60 onset=144.25
+a 0.25
+# merged_event=360 source=m37.e12@1 source_midi=71 uniform=59 local=0 final=59 onset=144.5
+m 0.25
+# merged_event=361 source=m37.e13@1,m38.e1@1 source_midi=69 uniform=57 local=0 final=57 onset=144.75
+n 0.5
+# merged_event=362 source=m38.e2@1 source_midi=67 uniform=55 local=0 final=55 onset=145.25
+b 0.75
+# merged_event=363 source=m38.e3@1 source_midi=67 uniform=55 local=0 final=55 onset=146
+b 0.5
+# merged_event=364 source=m38.e4@1 source_midi=64 uniform=52 local=0 final=52 onset=146.5
+c 0.25
+# merged_event=365 source=m38.e5@1,m38.e6@1 source_midi=74 uniform=62 local=0 final=62 onset=146.75
+s 0.5
+# merged_event=366 source=m38.e7@1,m38.e8@1 source_midi=72 uniform=60 local=0 final=60 onset=147.25
+a 1.5
+# merged_event=367 source=m38.e9@1 source_midi=76 uniform=64 local=0 final=64 onset=148.75
+d 0.25
+# merged_event=368 source=m39.e1@1 source_midi=72 uniform=60 local=0 final=60 onset=149
+a 0.5
+# merged_event=369 source=m39.e2@1 source_midi=71 uniform=59 local=0 final=59 onset=149.5
+m 0.25
+# merged_event=370 source=m39.e3@1,m39.e4@1 source_midi=72 uniform=60 local=0 final=60 onset=149.75
+a 0.5
+# merged_event=371 source=m39.e5@1 source_midi=65 uniform=53 local=0 final=53 onset=150.25
+v 0.5
+# merged_event=372 source=m39.e6@1 source_midi=72 uniform=60 local=0 final=60 onset=150.75
+a 0.25
+# merged_event=373 source=m39.e7@1 source_midi=71 uniform=59 local=0 final=59 onset=151
+m 0.5
+# merged_event=374 source=m39.e8@1,m39.e9@1 source_midi=69 uniform=57 local=0 final=57 onset=151.5
+n 0.75
+# merged_event=375 source=m39.e10@1 source_midi=67 uniform=55 local=0 final=55 onset=152.25
+b 0.5
+# merged_event=376 source=m39.e11@1,m40.e1@1 source_midi=64 uniform=52 local=0 final=52 onset=152.75
+c 0.75
+# merged_event=377 source=m40.e2@1 source_midi=64 uniform=52 local=0 final=52 onset=153.5
+c 0.5
+# merged_event=378 source=m40.e3@1 source_midi=64 uniform=52 local=0 final=52 onset=154
+c 0.5
+# merged_event=379 source=m40.e4@1 source_midi=67 uniform=55 local=0 final=55 onset=154.5
+b 0.5
+# merged_event=380 source=m40.e5@1 source_midi=65 uniform=53 local=0 final=53 onset=155
+v 0.5
+# merged_event=381 source=m40.e6@1 source_midi=64 uniform=52 local=0 final=52 onset=155.5
+c 0.25
+# merged_event=382 source=m40.e7@1 source_midi=65 uniform=53 local=0 final=53 onset=155.75
+v 0.25
+# merged_event=383 source=m40.e8@1 source_midi=76 uniform=64 local=0 final=64 onset=156
+d 0.25
+# merged_event=384 source=m40.e9@1 source_midi=74 uniform=62 local=0 final=62 onset=156.25
+s 0.25
+# merged_event=385 source=m40.e10@1 source_midi=72 uniform=60 local=0 final=60 onset=156.5
+a 0.25
+# merged_event=386 source=m40.e11@1 source_midi=71 uniform=59 local=0 final=59 onset=156.75
+m 0.25
+# merged_event=387 source=m41.e1@1 source_midi=69 uniform=57 local=0 final=57 onset=157
+n 0.5
+# merged_event=388 source=m41.e2@1 source_midi=65 uniform=53 local=0 final=53 onset=157.5
+v 0.25
+# merged_event=389 source=m41.e3@1,m41.e4@1 source_midi=69 uniform=57 local=0 final=57 onset=157.75
+n 0.5
+# merged_event=390 source=m41.e5@1 source_midi=76 uniform=64 local=0 final=64 onset=158.25
+d 0.5
+# merged_event=391 source=m41.e6@1,m41.e7@1 source_midi=76 uniform=64 local=0 final=64 onset=158.75
+d 0.5
+# merged_event=392 source=m41.e8@1 source_midi=74 uniform=62 local=0 final=62 onset=159.25
+s 0.5
+# merged_event=393 source=m41.e9@1 source_midi=74 uniform=62 local=0 final=62 onset=159.75
+s 0.25
+# merged_event=394 source=m41.e10@1 source_midi=74 uniform=62 local=0 final=62 onset=160
+s 0.25
+# merged_event=395 source=m41.e11@1 source_midi=72 uniform=60 local=0 final=60 onset=160.25
+a 0.25
+# merged_event=396 source=m41.e12@1 source_midi=71 uniform=59 local=0 final=59 onset=160.5
+m 0.25
+# merged_event=397 source=m41.e13@1,m42.e1@1 source_midi=69 uniform=57 local=0 final=57 onset=160.75
+n 0.5
+# merged_event=398 source=m42.e2@1 source_midi=67 uniform=55 local=0 final=55 onset=161.25
+b 0.5
+# merged_event=399 source=m42.e3@1 source_midi=67 uniform=55 local=0 final=55 onset=161.75
+b 0.25
+# merged_event=400 source=m42.e4@1 source_midi=67 uniform=55 local=0 final=55 onset=162
+b 0.5
+# merged_event=401 source=m42.e5@1 source_midi=64 uniform=52 local=0 final=52 onset=162.5
+c 0.25
+# merged_event=402 source=m42.e6@1,m42.e7@1 source_midi=74 uniform=62 local=0 final=62 onset=162.75
+s 0.5
+# merged_event=403 source=m42.e8@1,m42.e9@1 source_midi=72 uniform=60 local=0 final=60 onset=163.25
+a 1.5
+# merged_event=404 source=m42.e10@1 source_midi=64 uniform=52 local=0 final=52 onset=164.75
+c 0.25
+# merged_event=405 source=m43.e1@1 source_midi=65 uniform=53 local=0 final=53 onset=165
+v 0.5
+# merged_event=406 source=m43.e2@1 source_midi=64 uniform=52 local=0 final=52 onset=165.5
+c 0.25
+# merged_event=407 source=m43.e3@1,m43.e4@1 source_midi=65 uniform=53 local=0 final=53 onset=165.75
+v 0.5
+# merged_event=408 source=m43.e5@1 source_midi=64 uniform=52 local=0 final=52 onset=166.25
+c 0.5
+# merged_event=409 source=m43.e6@1,m43.e7@1 source_midi=62 uniform=50 local=0 final=50 onset=166.75
+x 0.75
+# merged_event=410 source=m43.e8@1 source_midi=64 uniform=52 local=0 final=52 onset=167.5
+c 0.25
+# merged_event=411 source=m43.e9@1,m43.e10@1 source_midi=62 uniform=50 local=0 final=50 onset=167.75
+x 0.75
+# merged_event=412 source=m43.e11@1 source_midi=60 uniform=48 local=0 final=48 onset=168.5
+z 0.25
+# merged_event=413 source=m43.e12@1 source_midi=60 uniform=48 local=0 final=48 onset=168.75
+z 0.25
+# merged_event=414 source=m44.e1@1 source_midi=64 uniform=52 local=0 final=52 onset=169
+c 0.5
+# merged_event=415 source=m44.e2@1 source_midi=55 uniform=43 local=12 final=55 onset=169.5
+b 0.25
+# merged_event=416 source=m44.e3@1,m44.e4@1 source_midi=65 uniform=53 local=0 final=53 onset=169.75
+v 0.75
+# merged_event=417 source=m44.e5@1 source_midi=62 uniform=50 local=0 final=50 onset=170.5
+x 0.5
+# merged_event=418 source=m44.e6@1 source_midi=64 uniform=52 local=0 final=52 onset=171
+c 1
+# merged_event=419 source=m44.e7@1 source_midi=76 uniform=64 local=0 final=64 onset=172
+d 0.25
+# merged_event=420 source=m44.e8@1 source_midi=74 uniform=62 local=0 final=62 onset=172.25
+s 0.25
+# merged_event=421 source=m44.e9@1 source_midi=72 uniform=60 local=0 final=60 onset=172.5
+a 0.25
+# merged_event=422 source=m44.e10@1 source_midi=71 uniform=59 local=0 final=59 onset=172.75
+m 0.25
+# merged_event=423 source=m45.e1@1 source_midi=69 uniform=57 local=0 final=57 onset=173
+n 0.5
+# merged_event=424 source=m45.e2@1 source_midi=65 uniform=53 local=0 final=53 onset=173.5
+v 0.25
+# merged_event=425 source=m45.e3@1,m45.e4@1 source_midi=69 uniform=57 local=0 final=57 onset=173.75
+n 0.5
+# merged_event=426 source=m45.e5@1 source_midi=76 uniform=64 local=0 final=64 onset=174.25
+d 0.5
+# merged_event=427 source=m45.e6@1,m45.e7@1 source_midi=76 uniform=64 local=0 final=64 onset=174.75
+d 0.5
+# merged_event=428 source=m45.e8@1 source_midi=74 uniform=62 local=0 final=62 onset=175.25
+s 0.5
+# merged_event=429 source=m45.e9@1 source_midi=74 uniform=62 local=0 final=62 onset=175.75
+s 0.25
+# merged_event=430 source=m45.e10@1 source_midi=74 uniform=62 local=0 final=62 onset=176
+s 0.25
+# merged_event=431 source=m45.e11@1 source_midi=72 uniform=60 local=0 final=60 onset=176.25
+a 0.25
+# merged_event=432 source=m45.e12@1 source_midi=71 uniform=59 local=0 final=59 onset=176.5
+m 0.25
+# merged_event=433 source=m45.e13@1,m46.e1@1 source_midi=69 uniform=57 local=0 final=57 onset=176.75
+n 0.5
+# merged_event=434 source=m46.e2@1 source_midi=67 uniform=55 local=0 final=55 onset=177.25
+b 0.75
+# merged_event=435 source=m46.e3@1 source_midi=67 uniform=55 local=0 final=55 onset=178
+b 0.5
+# merged_event=436 source=m46.e4@1 source_midi=64 uniform=52 local=0 final=52 onset=178.5
+c 0.25
+# merged_event=437 source=m46.e5@1,m46.e6@1 source_midi=74 uniform=62 local=0 final=62 onset=178.75
+s 0.5
+# merged_event=438 source=m46.e7@1,m46.e8@1 source_midi=72 uniform=60 local=0 final=60 onset=179.25
+a 1.5
+# merged_event=439 source=m46.e9@1 source_midi=72 uniform=60 local=0 final=60 onset=180.75
+a 0.25
+# merged_event=440 source=m47.e1@1 source_midi=72 uniform=60 local=0 final=60 onset=181
+a 0.5
+# merged_event=441 source=m47.e2@1 source_midi=71 uniform=59 local=0 final=59 onset=181.5
+m 0.25
+# merged_event=442 source=m47.e3@1,m47.e4@1 source_midi=72 uniform=60 local=0 final=60 onset=181.75
+a 0.5
+# merged_event=443 source=m47.e5@1 source_midi=65 uniform=53 local=0 final=53 onset=182.25
+v 0.5
+# merged_event=444 source=m47.e6@1 source_midi=72 uniform=60 local=0 final=60 onset=182.75
+a 0.25
+# merged_event=445 source=m47.e7@1 source_midi=71 uniform=59 local=0 final=59 onset=183
+m 0.5
+# merged_event=446 source=m47.e8@1,m47.e9@1 source_midi=69 uniform=57 local=0 final=57 onset=183.5
+n 0.75
+# merged_event=447 source=m47.e10@1 source_midi=67 uniform=55 local=0 final=55 onset=184.25
+b 0.5
+# merged_event=448 source=m47.e11@1 source_midi=64 uniform=52 local=0 final=52 onset=184.75
+c 0.25
+# merged_event=449 source=m48.e1@1 source_midi=64 uniform=52 local=0 final=52 onset=185
+c 0.5
+# merged_event=450 source=m48.e2@1 source_midi=64 uniform=52 local=0 final=52 onset=185.5
+c 0.5
+# merged_event=451 source=m48.e3@1 source_midi=64 uniform=52 local=0 final=52 onset=186
+c 0.5
+# merged_event=452 source=m48.e4@1 source_midi=67 uniform=55 local=0 final=55 onset=186.5
+b 0.5
+# merged_event=453 source=m48.e5@1 source_midi=65 uniform=53 local=0 final=53 onset=187
+v 0.5
+# merged_event=454 source=m48.e6@1 source_midi=64 uniform=52 local=0 final=52 onset=187.5
+c 0.25
+# merged_event=455 source=m48.e7@1 source_midi=65 uniform=53 local=0 final=53 onset=187.75
+v 0.25
+# merged_event=456 source=m48.e8@1 source_midi=76 uniform=64 local=0 final=64 onset=188
+d 0.25
+# merged_event=457 source=m48.e9@1 source_midi=74 uniform=62 local=0 final=62 onset=188.25
+s 0.25
+# merged_event=458 source=m48.e10@1 source_midi=72 uniform=60 local=0 final=60 onset=188.5
+a 0.25
+# merged_event=459 source=m48.e11@1 source_midi=71 uniform=59 local=0 final=59 onset=188.75
+m 0.25
+# merged_event=460 source=m49.e1@1 source_midi=69 uniform=57 local=0 final=57 onset=189
+n 0.5
+# merged_event=461 source=m49.e2@1 source_midi=65 uniform=53 local=0 final=53 onset=189.5
+v 0.25
+# merged_event=462 source=m49.e3@1,m49.e4@1 source_midi=69 uniform=57 local=0 final=57 onset=189.75
+n 0.5
+# merged_event=463 source=m49.e5@1 source_midi=76 uniform=64 local=0 final=64 onset=190.25
+d 0.5
+# merged_event=464 source=m49.e6@1,m49.e7@1 source_midi=76 uniform=64 local=0 final=64 onset=190.75
+d 0.5
+# merged_event=465 source=m49.e8@1 source_midi=74 uniform=62 local=0 final=62 onset=191.25
+s 0.5
+# merged_event=466 source=m49.e9@1 source_midi=74 uniform=62 local=0 final=62 onset=191.75
+s 0.25
+# merged_event=467 source=m49.e10@1 source_midi=74 uniform=62 local=0 final=62 onset=192
+s 0.25
+# merged_event=468 source=m49.e11@1 source_midi=72 uniform=60 local=0 final=60 onset=192.25
+a 0.25
+# merged_event=469 source=m49.e12@1 source_midi=71 uniform=59 local=0 final=59 onset=192.5
+m 0.25
+# merged_event=470 source=m49.e13@1,m50.e1@1 source_midi=69 uniform=57 local=0 final=57 onset=192.75
+n 0.5
+# merged_event=471 source=m50.e2@1 source_midi=67 uniform=55 local=0 final=55 onset=193.25
+b 0.5
+# merged_event=472 source=m50.e3@1 source_midi=67 uniform=55 local=0 final=55 onset=193.75
+b 0.25
+# merged_event=473 source=m50.e4@1 source_midi=67 uniform=55 local=0 final=55 onset=194
+b 0.5
+# merged_event=474 source=m50.e5@1 source_midi=64 uniform=52 local=0 final=52 onset=194.5
+c 0.25
+# merged_event=475 source=m50.e6@1,m50.e7@1 source_midi=74 uniform=62 local=0 final=62 onset=194.75
+s 0.5
+# merged_event=476 source=m50.e8@1,m50.e9@1 source_midi=72 uniform=60 local=0 final=60 onset=195.25
+a 1.5
+# merged_event=477 source=m50.e10@1 source_midi=64 uniform=52 local=0 final=52 onset=196.75
+c 0.25
+# merged_event=478 source=m51.e1@1 source_midi=65 uniform=53 local=0 final=53 onset=197
+v 0.5
+# merged_event=479 source=m51.e2@1 source_midi=64 uniform=52 local=0 final=52 onset=197.5
+c 0.25
+# merged_event=480 source=m51.e3@1,m51.e4@1 source_midi=65 uniform=53 local=0 final=53 onset=197.75
+v 0.5
+# merged_event=481 source=m51.e5@1 source_midi=69 uniform=57 local=0 final=57 onset=198.25
+n 0.75
+# merged_event=482 source=m51.e6@1 source_midi=76 uniform=64 local=0 final=64 onset=199
+d 0.5
+# merged_event=483 source=m51.e7@1 source_midi=77 uniform=65 local=0 final=65 onset=199.5
+f 0.25
+# merged_event=484 source=m51.e8@1,m51.e9@1 source_midi=74 uniform=62 local=0 final=62 onset=199.75
+s 0.5
+# merged_event=485 source=m51.e10@1 source_midi=76 uniform=64 local=0 final=64 onset=200.25
+d 0.5
+# merged_event=486 source=m51.e11@1 source_midi=74 uniform=62 local=0 final=62 onset=200.75
+s 0.25
+# merged_event=487 source=m52.e1@1 source_midi=72 uniform=60 local=0 final=60 onset=201
+a 0.75
+# merged_event=488 source=m52.e2@1,m52.e3@1 source_midi=65 uniform=53 local=0 final=53 onset=201.75
+v 0.75
+# merged_event=489 source=m52.e4@1 source_midi=67 uniform=55 local=0 final=55 onset=202.5
+b 0.5
+# merged_event=490 source=m52.e5@1 source_midi=64 uniform=52 local=0 final=52 onset=203
+c 1
+# merged_event=491 source=m52.e6@1 source_midi=88 uniform=76 local=0 final=76 onset=204
+e 0.25
+# merged_event=492 source=m52.e7@1 source_midi=86 uniform=74 local=0 final=74 onset=204.25
+w 0.25
+# merged_event=493 source=m52.e8@1 source_midi=84 uniform=72 local=0 final=72 onset=204.5
+q 0.25
+# merged_event=494 source=m52.e9@1 source_midi=83 uniform=71 local=0 final=71 onset=204.75
+j 0.25
+# merged_event=495 source=m53.e1@1 source_midi=81 uniform=69 local=0 final=69 onset=205
+h 0.5
+# merged_event=496 source=m53.e2@1 source_midi=77 uniform=65 local=0 final=65 onset=205.5
+f 0.25
+# merged_event=497 source=m53.e3@1,m53.e4@1 source_midi=81 uniform=69 local=0 final=69 onset=205.75
+h 0.5
+# merged_event=498 source=m53.e5@1 source_midi=77 uniform=65 local=0 final=65 onset=206.25
+f 0.5
+# merged_event=499 source=m53.e6@1 source_midi=88 uniform=76 local=0 final=76 onset=206.75
+e 0.25
+# merged_event=500 source=m53.e7@1 source_midi=88 uniform=76 local=0 final=76 onset=207
+e 0.25
+# merged_event=501 source=m53.e8@1 source_midi=86 uniform=74 local=0 final=74 onset=207.25
+w 0.5
+# merged_event=502 source=m53.e9@1 source_midi=86 uniform=74 local=0 final=74 onset=207.75
+w 0.25
+# merged_event=503 source=m53.e10@1 source_midi=86 uniform=74 local=0 final=74 onset=208
+w 0.25
+# merged_event=504 source=m53.e11@1 source_midi=84 uniform=72 local=0 final=72 onset=208.25
+q 0.25
+# merged_event=505 source=m53.e12@1 source_midi=83 uniform=71 local=0 final=71 onset=208.5
+j 0.25
+# merged_event=506 source=m53.e13@1,m54.e1@1 source_midi=81 uniform=69 local=0 final=69 onset=208.75
+h 0.5
+# merged_event=507 source=m54.e2@1 source_midi=79 uniform=67 local=0 final=67 onset=209.25
+g 0.5
+# merged_event=508 source=m54.e3@1,m54.e4@1 source_midi=79 uniform=67 local=0 final=67 onset=209.75
+g 0.75
+# merged_event=509 source=m54.e5@1 source_midi=76 uniform=64 local=0 final=64 onset=210.5
+d 0.25
+# merged_event=510 source=m54.e6@1 source_midi=86 uniform=74 local=0 final=74 onset=210.75
+w 0.25
+# merged_event=511 source=m54.e7@1 source_midi=86 uniform=74 local=0 final=74 onset=211
+w 0.25
+# merged_event=512 source=m54.e8@1,m54.e9@1 source_midi=84 uniform=72 local=0 final=72 onset=211.25
+q 1.5
+# merged_event=513 source=m54.e10@1 source_midi=76 uniform=64 local=0 final=64 onset=212.75
+d 0.25
+# merged_event=514 source=m55.e1@1 source_midi=77 uniform=65 local=0 final=65 onset=213
+f 0.5
+# merged_event=515 source=m55.e2@1 source_midi=76 uniform=64 local=0 final=64 onset=213.5
+d 0.25
+# merged_event=516 source=m55.e3@1,m55.e4@1 source_midi=77 uniform=65 local=0 final=65 onset=213.75
+f 0.5
+# merged_event=517 source=m55.e5@1 source_midi=81 uniform=69 local=0 final=69 onset=214.25
+h 0.5
+# merged_event=518 source=m55.e6@1 source_midi=79 uniform=67 local=0 final=67 onset=214.75
+g 0.25
+# merged_event=519 source=m55.e7@1 source_midi=88 uniform=76 local=0 final=76 onset=215
+e 0.5
+# merged_event=520 source=m55.e8@1 source_midi=89 uniform=77 local=0 final=77 onset=215.5
+r 0.25
+# merged_event=521 source=m55.e9@1,m55.e10@1 source_midi=86 uniform=74 local=0 final=74 onset=215.75
+w 1.25
+# merged_event=522 source=m56.e1@1 source_midi=None uniform=None local=0 final=None onset=217
+p 1
+# merged_event=523 source=m56.e2@1 source_midi=88 uniform=76 local=0 final=76 onset=218
+e 1
+# merged_event=524 source=m57.e1@1,m57.e2@1,m57.e3@1,m57.e4@1 source_midi=84 uniform=72 local=0 final=72 onset=219
+q 1
+# merged_event=525 source=m57.e5@1 source_midi=74 uniform=62 local=0 final=62 onset=220
+s 0.25
+# merged_event=526 source=m57.e6@1 source_midi=76 uniform=64 local=0 final=64 onset=220.25
+d 0.25
+# merged_event=527 source=m57.e7@1 source_midi=81 uniform=69 local=0 final=69 onset=220.5
+h 0.25
+# merged_event=528 source=m57.e8@1 source_midi=76 uniform=64 local=0 final=64 onset=220.75
+d 0.25
+# merged_event=529 source=m57.e9@1 source_midi=74 uniform=62 local=0 final=62 onset=221
+s 0.25
+# merged_event=530 source=m57.e10@1 source_midi=76 uniform=64 local=0 final=64 onset=221.25
+d 0.25
+# merged_event=531 source=m57.e11@1 source_midi=81 uniform=69 local=0 final=69 onset=221.5
+h 0.25
+# merged_event=532 source=m57.e12@1 source_midi=76 uniform=64 local=0 final=64 onset=221.75
+d 0.25
+# merged_event=533 source=m57.e13@1 source_midi=74 uniform=62 local=0 final=62 onset=222
+s 0.25
+# merged_event=534 source=m57.e14@1 source_midi=76 uniform=64 local=0 final=64 onset=222.25
+d 0.25
+# merged_event=535 source=m57.e15@1 source_midi=81 uniform=69 local=0 final=69 onset=222.5
+h 0.25
+# merged_event=536 source=m57.e16@1 source_midi=76 uniform=64 local=0 final=64 onset=222.75
+d 0.25
+# merged_event=537 source=m58.e1@1 source_midi=74 uniform=62 local=0 final=62 onset=223
+s 0.25
+# merged_event=538 source=m58.e2@1 source_midi=76 uniform=64 local=0 final=64 onset=223.25
+d 0.25
+# merged_event=539 source=m58.e3@1 source_midi=81 uniform=69 local=0 final=69 onset=223.5
+h 0.25
+# merged_event=540 source=m58.e4@1 source_midi=76 uniform=64 local=0 final=64 onset=223.75
+d 0.25
+# merged_event=541 source=m58.e5@1 source_midi=74 uniform=62 local=0 final=62 onset=224
+s 0.25
+# merged_event=542 source=m58.e6@1 source_midi=76 uniform=64 local=0 final=64 onset=224.25
+d 0.25
+# merged_event=543 source=m58.e7@1 source_midi=81 uniform=69 local=0 final=69 onset=224.5
+h 0.25
+# merged_event=544 source=m58.e8@1 source_midi=76 uniform=64 local=0 final=64 onset=224.75
+d 0.25
+# merged_event=545 source=m58.e9@1 source_midi=74 uniform=62 local=0 final=62 onset=225
+s 0.25
+# merged_event=546 source=m58.e10@1 source_midi=76 uniform=64 local=0 final=64 onset=225.25
+d 0.25
+# merged_event=547 source=m58.e11@1 source_midi=81 uniform=69 local=0 final=69 onset=225.5
+h 0.25
+# merged_event=548 source=m58.e12@1 source_midi=76 uniform=64 local=0 final=64 onset=225.75
+d 0.25
+# merged_event=549 source=m58.e13@1 source_midi=74 uniform=62 local=0 final=62 onset=226
+s 0.25
+# merged_event=550 source=m58.e14@1 source_midi=76 uniform=64 local=0 final=64 onset=226.25
+d 0.25
+# merged_event=551 source=m58.e15@1 source_midi=81 uniform=69 local=0 final=69 onset=226.5
+h 0.25
+# merged_event=552 source=m58.e16@1,m59.e1@1 source_midi=76 uniform=64 local=0 final=64 onset=226.75
+d 4.25

@@ -1,5 +1,14 @@
 # Android手机播放器独立续跑日志
 
+## 2026-10-04 八首候选入库与双端封包
+
+- 双端由 306 首增至 314 首，新增 `song_307`–`song_314`；歌曲清单和授权简化说明见 `docs/RELEASE_20261004.md`。
+- Android `0.1.0-mvp-20261004` / versionCode 55；Windows `1.0.0-beta.57` / 曲库版本 195。
+- Android 单测、Lint、构建通过；Windows 43 项单测通过；跨端 314/314，缺失、独有、内容和资源错误均为 0。
+- APK 为 `artifacts/PocketMusic21-v0.1.0-mvp-20261004-314songs-debug.apk`，10,032,511 bytes。
+- 阿里云更新源 `https://ygqpy.xyz/manifest.json` 已显示 314 首，发布编号 `20261004_084325`；两端下载返回 HTTP 200。
+- 保留 `candidate / requires_in_game_audition`，未做游戏试听，不称为原唱逐音保真或 final。未启动监测和后台任务。
+
 ## 2026-08-22 《孑遗者的故乡》候选同步
 
 - Windows `builtin_songs/孑遗者的故乡.txt` 与 Android `song_268.txt` 已同步，`library.json` 更新为 268 首，推荐 500 ms/拍。

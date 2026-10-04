@@ -1,10 +1,14 @@
 # GitHub 发布交接（Android）
 
-## 当前发布版本（2026-09-27）
+## 当前发布版本（2026-10-04）
 
-- Android 曲库 306 首，versionCode 54，版本名 `0.1.0-mvp-20260927`。
-- 新增 `song_302`–`song_306`：《Into the Sky》《Mr. Broken Heart》《Cage》《World is Mine》《闹够了没有》；五首均为 candidate / requires_in_game_audition。
+- Android 曲库 314 首，versionCode 55，版本名 `0.1.0-mvp-20261004`。
+- 新增 `song_307`–`song_314`：《Fractures》《刚刚好》《暧昧》《美人鱼》《不遗憾》《恋人》《模特》《月声尽，心灯明》；八首均为 candidate / requires_in_game_audition。
 - 更新源统一为 `https://ygqpy.xyz/manifest.json`，历史页为 `https://ygqpy.xyz/`。
+- 已完成 `:app:testDebugUnitTest :app:lintDebug :app:assembleDebug`；跨端 314/314，缺失、独有、内容和资源错误均为 0。
+- 本轮 APK：`artifacts/PocketMusic21-v0.1.0-mvp-20261004-314songs-debug.apk`，10,032,511 bytes；SHA-256 `E1B7B8AB9AFAC29D69BAC877353AF61F8AB4435A0928D580016ECAE2256CF865`。
+- 更新源发布编号 `20261004_084325` 已激活，Windows beta.57 / Android 20261004；八首状态不变，未做游戏试听。
+- 完整发布说明见 `docs/RELEASE_20261004.md`。本轮只更新主播放器，独立制谱器不升版。
 
 ## 当前待发布增量（2026-08-22）
 

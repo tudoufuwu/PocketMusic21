@@ -1,5 +1,13 @@
 # Android手机播放器接手说明
 
+## 当前接手点（2026-10-04）
+
+- 当前 Android/Windows 曲库为 314/314，新增 `song_307`–`song_314`，均为 `requires_in_game_audition`。
+- Android `0.1.0-mvp-20261004` / versionCode 55，主播放器 APK 位于 `artifacts/PocketMusic21-v0.1.0-mvp-20261004-314songs-debug.apk`。
+- Android 单测、Lint、构建与跨端门禁通过；更新源已激活发布 `20261004_084325`。
+- 发布说明及八首的编配限制见 `docs/RELEASE_20261004.md`；不要重新下载、制谱或把旧音频草稿替代已获准的 PDF 版本。
+- 用户允许入库、封包和发布，不等于已游戏试听；原始严格记录与授权简化记录均需保留。
+
 ## 当前曲库增量（2026-08-22）
 
 - 已同步《孑遗者的故乡》为 song_268，推荐 500 ms/拍；状态为 equires_in_game_audition，下次构建纳入。
